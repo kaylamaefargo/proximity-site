@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Revenue Chain Teardown — Proximity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2ECDD; --card:#FBF7EA; --ink:#1C310B; --ink-soft:#4B5A3E;
+    --evergreen:#2E4A39; --navy:#17384A;
+    --olive:#8E7A09; --rust:#C0562C; --rust-dark:#9C4322;
+    --sea-mist:#9AB1A0; --pistachio:#F5F9D2;
+    --serif: "Yeseva One", Georgia, "Times New Roman", serif;
+    --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background-color:var(--paper);
+    background-image:radial-gradient(circle, rgba(28,49,11,.08) 1px, transparent 1.5px);
+    background-size:16px 16px;
+    color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  ::selection{background:var(--rust);color:var(--paper)}
+  :focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+  .container{max-width:1120px;margin:0 auto;padding-inline:clamp(20px,5vw,48px)}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--evergreen);text-wrap:balance;margin:0}
+  p{margin:0}
+  .mark{text-decoration:underline;text-decoration-color:var(--rust);text-decoration-thickness:.3em;text-underline-offset:-.08em;text-decoration-skip-ink:none}
+  .icon{display:inline-block;vertical-align:-2px}
+  .eyebrow{
+    display:inline-block;font-family:var(--sans);font-weight:800;font-size:.74rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--evergreen);background:var(--pistachio);
+    border:1.5px dashed var(--olive);border-radius:2px;padding:5px 12px;
+    transform:rotate(-1.6deg);margin:0 0 16px;
+  }
+  .eyebrow.on-dark{background:transparent;border-color:rgba(242,236,221,.55);color:var(--pistachio)}
+  .lede{font-size:1.2rem;line-height:1.6;color:var(--ink-soft);max-width:62ch}
+  .prose p{max-width:66ch;font-size:1.06rem;color:var(--ink-soft)}
+  .prose p + p{margin-top:1.1em}
+  .prose strong{color:var(--ink)}
+
+  .site-nav{position:sticky;top:0;z-index:40;background:var(--paper);box-shadow:0 3px 0 var(--evergreen),0 6px 0 var(--olive)}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:18px clamp(20px,5vw,48px) 14px;display:flex;align-items:center;gap:24px}
+  .wordmark{font-family:var(--sans);font-weight:800;letter-spacing:.15em;font-size:1.05rem;color:var(--evergreen);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:7px}
+  .wordmark .star{color:var(--rust)}
+  .nav-links{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{
+    font-size:.83rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+    padding-bottom:3px;background-image:linear-gradient(var(--olive) 0 0);background-repeat:no-repeat;
+    background-size:0% .28em;background-position:0 100%;transition:background-size .25s cubic-bezier(.16,1,.3,1),color .25s cubic-bezier(.16,1,.3,1);
+  }
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--evergreen);background-size:100% .28em}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:800;font-size:.92rem;
+    letter-spacing:.02em;text-decoration:none;padding:13px 24px;border:2px solid var(--ink);border-radius:2px;
+    box-shadow:4px 4px 0 var(--ink);transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1);
+  }
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .btn-primary{background:var(--rust);color:var(--paper)}
+  .btn-ghost{background:var(--card);color:var(--evergreen)}
+  .btn-ghost-light{background:transparent;color:var(--paper);border-color:rgba(242,236,221,.7);box-shadow:4px 4px 0 rgba(242,236,221,.35)}
+  .btn-ghost-light:hover{box-shadow:2px 2px 0 rgba(242,236,221,.35)}
+
+  .hero{padding:clamp(48px,8vw,84px) 0 clamp(28px,5vw,48px)}
+  .hero h1{font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.1;max-width:20ch}
+  .hero .lede{margin-top:18px}
+
+  section{padding-block:clamp(38px,6vw,72px)}
+  .zine-rule{height:0;border-top:3px dashed var(--evergreen);position:relative;margin:0}
+  .zine-rule .glyph{position:absolute;top:0;left:50%;transform:translate(-50%,-50%) rotate(-8deg);background:var(--paper);color:var(--rust);padding:0 12px;display:flex}
+  .section-head{max-width:64ch;margin-bottom:30px}
+  .section-head h2{font-size:clamp(1.5rem,3vw,2.05rem);line-height:1.2}
+  .two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:44px}
+  @media (max-width:860px){.two-col{grid-template-columns:1fr}}
+
+  /* chain diagram — hand-marked, not a corporate flow chart. Stacks vertically on
+     narrow screens instead of forcing a horizontal scroll. */
+  .chain-wrap{padding:10px 2px 20px}
+  .chain{display:flex;align-items:center;padding-top:10px}
+  .chain-node{display:flex;flex-direction:column;align-items:center;flex:1;text-align:center;position:relative;min-width:0}
+  .chain-dot{width:16px;height:16px;flex-shrink:0;border-radius:48% 52% 46% 54%;background:var(--sea-mist);border:2px solid var(--evergreen);margin-bottom:10px;z-index:1}
+  .chain-node.leak .chain-dot{background:var(--rust);border-color:var(--rust-dark);outline:2px dashed var(--rust);outline-offset:5px}
+  .chain-label{font-size:.8rem;font-weight:700;color:var(--ink-soft)}
+  .chain-node.leak .chain-label{color:var(--rust-dark)}
+  .chain-line{position:absolute;top:8px;left:50%;width:100%;height:0;border-top:2px dashed var(--sea-mist);z-index:0}
+  .chain-node:last-child .chain-line{display:none}
+  .chain-flag{margin-top:8px;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;font-weight:800;color:var(--paper);background:var(--rust-dark);padding:3px 9px;border-radius:2px;transform:rotate(-2deg)}
+  @media (max-width:680px){
+    .chain{flex-direction:column;align-items:flex-start;gap:22px;padding-top:0}
+    .chain-node{flex-direction:row;align-items:center;gap:12px;text-align:left;width:100%}
+    .chain-dot{margin-bottom:0}
+    .chain-line{display:none}
+    .chain-node:not(:last-child)::after{content:"";position:absolute;left:7px;top:22px;height:26px;width:0;border-left:2px dashed var(--sea-mist)}
+    .chain-flag{margin-top:0;margin-left:auto}
+  }
+
+  .fit-card{background:var(--card);border:2px solid var(--ink);border-radius:3px;padding:28px 26px;box-shadow:6px 6px 0 var(--sea-mist)}
+  .fit-card h3{font-size:1.2rem;margin-bottom:12px}
+  .fit-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .fit-list li{padding-left:22px;position:relative;color:var(--ink-soft);font-size:.98rem}
+  .fit-list li::before{content:"—";position:absolute;left:0;color:var(--olive);font-weight:700}
+
+  /* callout — dashed stamp box, not a colored border-left accent */
+  .callout{background:var(--pistachio);border:2px dashed var(--rust);border-radius:3px;padding:22px 26px;margin-top:18px;transform:rotate(-0.4deg)}
+  .callout p{color:var(--ink);font-size:1.02rem}
+  .callout strong{color:var(--evergreen)}
+
+  .timeline{width:100%;border-collapse:separate;border-spacing:0;margin-top:8px;border:2px solid var(--ink);border-radius:3px;overflow:hidden}
+  .timeline th{text-align:left;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--paper);background:var(--evergreen);padding:11px 14px}
+  .timeline td{padding:16px 14px;border-top:2px solid var(--ink);font-size:.96rem;color:var(--ink-soft);vertical-align:top}
+  .timeline tr:nth-child(even) td{background:var(--pistachio)}
+  .timeline td:first-child{color:var(--ink);font-weight:800;white-space:nowrap}
+  .pill{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border:1.5px solid var(--ink);border-radius:2px;transform:rotate(-2deg)}
+  .pill-live{background:var(--rust);color:var(--paper)}
+  .pill-async{background:var(--sea-mist);color:var(--evergreen)}
+  .tl-note{margin-top:18px;font-size:.94rem;color:var(--ink-soft);max-width:66ch}
+
+  .needs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 32px;margin-top:8px;list-style:none;padding:0}
+  @media (max-width:700px){.needs-grid{grid-template-columns:1fr}}
+  .needs-grid li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem;color:var(--ink-soft)}
+  .needs-grid .icon{color:var(--evergreen);flex-shrink:0;margin-top:3px}
+
+  .schema{display:flex;flex-direction:column;border:2px solid var(--ink);border-radius:3px;overflow:hidden;background:var(--card);box-shadow:6px 6px 0 var(--olive)}
+  .schema-row{display:grid;grid-template-columns:190px 1fr;border-top:2px solid var(--ink)}
+  .schema-row:first-child{border-top:none}
+  .schema-row.outcome{background:var(--pistachio)}
+  .schema-label{font-family:var(--sans);font-weight:800;font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;color:var(--paper);background:var(--evergreen);padding:16px 18px;display:flex;align-items:center}
+  .schema-row.outcome .schema-label{background:var(--rust)}
+  .schema-desc{padding:16px 20px;color:var(--ink-soft);font-size:.96rem;display:flex;align-items:center}
+  @media (max-width:640px){.schema-row{grid-template-columns:1fr}}
+
+  .cta-band{background:var(--navy);color:var(--paper)}
+  .cta-band .container{padding-block:clamp(48px,8vw,84px)}
+  .cta-band h2{color:var(--paper);font-size:clamp(1.75rem,3.4vw,2.4rem);max-width:18ch}
+  .cta-band .lede{color:rgba(242,236,221,.8);margin-top:14px}
+  .cta-band .hero-ctas{margin-top:24px;display:flex;gap:16px;flex-wrap:wrap}
+
+  footer.site-footer{background:var(--navy);border-top:3px solid var(--olive);color:rgba(242,236,221,.65)}
+  footer.site-footer .container{padding-block:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:.86rem}
+  footer.site-footer a{color:rgba(242,236,221,.85);text-decoration:none}
+  footer.site-footer a:hover{color:var(--paper)}
+  footer.site-footer .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+
+  @media (prefers-reduced-motion: reduce){
+    .btn,.nav-links a{transition:none}
+    .btn:hover,.btn:active{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">
+      <svg class="icon star" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+      PROXIMITY
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="fractional.html">Fractional Marketing</a>
+      <a href="teardown.html" aria-current="page">The Teardown</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <p class="eyebrow">The Revenue Chain Teardown</p>
+  <h1>Your pipeline problem <span class="mark">isn't a pipeline problem</span>.</h1>
+  <p class="lede">Deals stall in the first call, so you hire a sales consultant to fix the discovery script. Nothing changes — because the real cause was upstream.</p>
+</header>
+
+<section class="container">
+  <div class="two-col">
+    <div class="prose">
+      <p>Maybe the ads are bringing in people who were never going to buy. Maybe the site never gave anyone a reason to act this quarter instead of next one. Maybe your rep is trying to manufacture urgency from scratch on a thirty-minute call, because nothing before that call built any.</p>
+      <p><strong>A marketing consultant can't see how the call actually goes. A sales consultant can't see what the ad promised.</strong> I trace the whole chain — first impression to closed-lost note — and tell you the one thing to fix first.</p>
+    </div>
+    <div class="chain-wrap">
+      <div class="chain">
+        <div class="chain-node"><div class="chain-line"></div><div class="chain-dot"></div><div class="chain-label">Ad</div></div>
+        <div class="chain-node"><div class="chain-line"></div><div class="chain-dot"></div><div class="chain-label">Landing Page</div></div>
+        <div class="chain-node leak"><div class="chain-line"></div><div class="chain-dot"></div><div class="chain-label">Discovery Call</div><div class="chain-flag">Leak found here</div></div>
+        <div class="chain-node"><div class="chain-line"></div><div class="chain-dot"></div><div class="chain-label">Proposal</div></div>
+        <div class="chain-node"><div class="chain-dot"></div><div class="chain-label">Closed / Lost</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="zine-rule"><span class="glyph"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg></span></div>
+
+<section class="container">
+  <div class="section-head">
+    <h2>Built for companies with a real sales motion and a number they already don't like.</h2>
+  </div>
+  <div class="fit-card">
+    <h3>This fits if:</h3>
+    <ul class="fit-list">
+      <li>You have an established B2B sales motion — reps, a pipeline, a CRM with history in it.</li>
+      <li>There's a specific metric you already distrust: win rate, stage-one stall rate, Closed No Decision, or CAC payback.</li>
+      <li>You can pull four quarters of closed-won and closed-lost data, with stage history and loss reasons.</li>
+      <li>You suspect the problem isn't where everyone on the team has been looking — and you'd rather know for certain than keep guessing.</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <p><strong>Run your own math:</strong> if a five-point improvement in win rate is worth more than $10,000 to your business over the next year — and for most B2B companies with a real deal size, it is — this is a rounding error against what the leak is already costing you.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-head">
+    <p class="eyebrow">Scope</p>
+    <h2>$10,000. Fixed. Two weeks.</h2>
+  </div>
+  <table class="timeline">
+    <thead>
+      <tr><th>When</th><th>What</th><th>Mode</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Day 0</td><td>Intake call</td><td><span class="pill pill-live">Live · 90 min</span></td></tr>
+      <tr><td>Days 1–7</td><td>Evidence gathering across the whole chain</td><td><span class="pill pill-async">Async</span></td></tr>
+      <tr><td>Days 8–11</td><td>Analysis and report</td><td><span class="pill pill-async">Async</span></td></tr>
+      <tr><td>Day 12</td><td>Readout — the findings, ranked</td><td><span class="pill pill-live">Live · 90 min</span></td></tr>
+    </tbody>
+  </table>
+  <p class="tl-note">Two live calls; everything else happens on your schedule. If you decide to move forward on what we find, half of the $10,000 is credited toward that work — see <a href="fractional.html" style="color:var(--olive);font-weight:700">Fractional Marketing &amp; GTM</a>.</p>
+</section>
+
+<section class="container">
+  <div class="section-head">
+    <h2>Here's what I'll ask you for to run the diagnostic.</h2>
+    <p class="lede" style="margin-top:10px;font-size:1.06rem">Everything below is what I need direct access to before Day 1 — this is the raw material the Teardown gets built from, not paperwork.</p>
+  </div>
+  <ul class="needs-grid">
+    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>Website and top 5 landing pages</span></li>
+    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>Paid media accounts, read-only access</span></li>
+    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>CRM export: last 4 quarters, closed-won and closed-lost, with stage history and loss reasons</span></li>
+    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>5–10 recorded sales calls</span></li>
+    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>Outbound sequences as currently deployed</span></li>
+    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>Pitch deck, one-pagers, battlecards</span></li>
+    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>Marketing-to-sales handoff doc, if one exists</span></li>
+  </ul>
+  <p class="tl-note">If you can't easily produce the closed-lost data — that's already a finding.</p>
+</section>
+
+<section class="container">
+  <div class="section-head">
+    <h2>Same schema every time. Ranked. One "fix this first," then everything else below it.</h2>
+  </div>
+  <div class="schema">
+    <div class="schema-row"><div class="schema-label">Symptom</div><div class="schema-desc">The number you already hate — win rate, stage-one stall rate, Closed No Decision, CAC payback.</div></div>
+    <div class="schema-row"><div class="schema-label">Position</div><div class="schema-desc">Where in the chain it actually originates — ad, landing page, discovery call, proposal — not just where it shows up.</div></div>
+    <div class="schema-row"><div class="schema-label">Root Cause</div><div class="schema-desc">The thing underneath it, once the evidence rules out the obvious explanations everyone already tried.</div></div>
+    <div class="schema-row"><div class="schema-label">Evidence</div><div class="schema-desc">What I actually saw — call recordings, CRM stage history, ad copy, page analytics — with receipts, not assumptions.</div></div>
+    <div class="schema-row"><div class="schema-label">Fix</div><div class="schema-desc">The specific move. Not a framework, not "align sales and marketing" — an action you could start this week.</div></div>
+    <div class="schema-row"><div class="schema-label">Expected Lift</div><div class="schema-desc">The honest range, based on your actual volume and deal size — not a promise.</div></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Book the intake call.</h2>
+    <p class="lede">Ninety minutes to walk through what you already suspect and what you can produce. I'll tell you honestly if the Teardown is the right shape for it — or if it isn't.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
+      <a class="btn btn-ghost-light" href="fractional.html">Or see Fractional Marketing</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Proximity — Kayla Fargo</span>
+    <div class="foot-links">
+      <a href="roadmap.html">AI Agent Roadmap</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="fractional.html">Fractional Marketing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Kayla Fargo — Proximity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2ECDD; --card:#FBF7EA; --ink:#1C310B; --ink-soft:#4B5A3E;
+    --evergreen:#2E4A39; --navy:#17384A;
+    --olive:#8E7A09; --rust:#C0562C; --rust-dark:#9C4322;
+    --sea-mist:#9AB1A0; --pistachio:#F5F9D2;
+    --serif: "Yeseva One", Georgia, "Times New Roman", serif;
+    --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background-color:var(--paper);
+    background-image:radial-gradient(circle, rgba(28,49,11,.08) 1px, transparent 1.5px);
+    background-size:16px 16px;
+    color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  ::selection{background:var(--rust);color:var(--paper)}
+  :focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+  .container{max-width:1120px;margin:0 auto;padding-inline:clamp(20px,5vw,48px)}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--evergreen);text-wrap:balance;margin:0}
+  p{margin:0}
+  .mark{text-decoration:underline;text-decoration-color:var(--rust);text-decoration-thickness:.3em;text-underline-offset:-.08em;text-decoration-skip-ink:none}
+  .icon{display:inline-block;vertical-align:-2px}
+  .eyebrow{
+    display:inline-block;font-family:var(--sans);font-weight:800;font-size:.74rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--evergreen);background:var(--pistachio);
+    border:1.5px dashed var(--olive);border-radius:2px;padding:5px 12px;
+    transform:rotate(-1.6deg);margin:0 0 16px;
+  }
+  .eyebrow.on-dark{background:transparent;border-color:rgba(242,236,221,.55);color:var(--pistachio)}
+  .lede{font-size:1.2rem;line-height:1.6;color:var(--ink-soft);max-width:62ch}
+  .prose p{max-width:64ch;font-size:1.06rem;color:var(--ink-soft)}
+  .prose p + p{margin-top:1.15em}
+  .prose strong{color:var(--ink)}
+
+  .site-nav{position:sticky;top:0;z-index:40;background:var(--paper);box-shadow:0 3px 0 var(--evergreen),0 6px 0 var(--olive)}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:18px clamp(20px,5vw,48px) 14px;display:flex;align-items:center;gap:24px}
+  .wordmark{font-family:var(--sans);font-weight:800;letter-spacing:.15em;font-size:1.05rem;color:var(--evergreen);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:7px}
+  .wordmark .star{color:var(--rust)}
+  .nav-links{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{
+    font-size:.83rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+    padding-bottom:3px;background-image:linear-gradient(var(--olive) 0 0);background-repeat:no-repeat;
+    background-size:0% .28em;background-position:0 100%;transition:background-size .25s cubic-bezier(.16,1,.3,1),color .25s cubic-bezier(.16,1,.3,1);
+  }
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--evergreen);background-size:100% .28em}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:800;font-size:.92rem;
+    letter-spacing:.02em;text-decoration:none;padding:13px 24px;border:2px solid var(--ink);border-radius:2px;
+    box-shadow:4px 4px 0 var(--ink);transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1);
+  }
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .btn-primary{background:var(--rust);color:var(--paper)}
+  .btn-ghost{background:var(--card);color:var(--evergreen)}
+
+  .hero{padding:clamp(48px,8vw,84px) 0 clamp(24px,4vw,40px)}
+  .hero-top{display:flex;gap:36px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap-reverse}
+  .hero-copy{flex:1;min-width:280px}
+  .hero h1{font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.1;max-width:20ch}
+  .hero .lede{margin-top:18px}
+
+  .hero-photo{position:relative;flex-shrink:0;width:230px;height:288px;margin-top:-22px}
+  .hero-photo .frame{position:absolute;inset:0;border:2px solid var(--ink);overflow:hidden}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-photo .badge{
+    position:absolute;top:-16px;left:-16px;width:52px;height:52px;border-radius:50%;
+    background:var(--rust);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;
+    color:var(--paper);transform:rotate(-10deg);
+  }
+  @media (max-width:540px){.hero-photo{width:160px;height:200px;margin-top:0}.hero-photo .badge{width:40px;height:40px;top:-10px;left:-10px}}
+
+  section{padding-block:clamp(32px,5vw,60px)}
+  .zine-rule{height:0;border-top:3px dashed var(--evergreen);position:relative;margin:0}
+  .zine-rule .glyph{position:absolute;top:0;left:50%;transform:translate(-50%,-50%) rotate(-8deg);background:var(--paper);color:var(--rust);padding:0 12px;display:flex}
+
+  .timeline-bio{display:flex;flex-direction:column;gap:0;border-top:2px dashed var(--sea-mist)}
+  .tl-item{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:26px 0;border-bottom:2px dashed var(--sea-mist)}
+  @media (max-width:640px){.tl-item{grid-template-columns:1fr;gap:6px}}
+  .tl-when{display:inline-block;font-family:var(--sans);font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem;color:var(--evergreen);
+    text-decoration:underline;text-decoration-color:var(--rust);text-decoration-thickness:.22em;text-underline-offset:-.05em;text-decoration-skip-ink:none;width:fit-content}
+  .tl-body h3{font-size:1.2rem;margin-bottom:8px;color:var(--evergreen)}
+  .tl-body p{color:var(--ink-soft);font-size:1rem;max-width:62ch}
+
+  .philosophy{background:var(--evergreen);color:var(--paper);border-radius:6px;border:2px solid var(--ink);padding:clamp(30px,5vw,52px);position:relative}
+  .philosophy::before{content:"";position:absolute;top:-14px;left:38px;width:82px;height:26px;background:rgba(197,178,50,.32);border:1px solid rgba(197,178,50,.5);transform:rotate(-4deg)}
+  .philosophy .eyebrow{color:var(--pistachio)}
+  .philosophy h2{color:var(--paper);font-size:clamp(1.4rem,2.8vw,1.9rem);max-width:24ch;margin-bottom:18px}
+  .philosophy p{color:rgba(242,236,221,.88);max-width:64ch;font-size:1.03rem}
+  .philosophy p+p{margin-top:1em}
+
+  .human-note{border-left:3px dashed var(--sea-mist);padding-left:22px;margin-top:8px}
+  .human-note p{color:var(--ink-soft);font-size:1.03rem;max-width:62ch}
+  .human-note a{color:var(--olive);font-weight:700;text-decoration:none}
+  .human-note a:hover{text-decoration:underline}
+
+  .cta-band{background:var(--navy);color:var(--paper)}
+  .cta-band .container{padding-block:clamp(48px,8vw,84px)}
+  .cta-band h2{color:var(--paper);font-size:clamp(1.75rem,3.4vw,2.4rem);max-width:18ch}
+  .cta-band .lede{color:rgba(242,236,221,.8);margin-top:14px}
+  .cta-band .hero-ctas{margin-top:24px;display:flex;gap:16px;flex-wrap:wrap}
+
+  footer.site-footer{background:var(--navy);border-top:3px solid var(--olive);color:rgba(242,236,221,.65)}
+  footer.site-footer .container{padding-block:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:.86rem}
+  footer.site-footer a{color:rgba(242,236,221,.85);text-decoration:none}
+  footer.site-footer a:hover{color:var(--paper)}
+  footer.site-footer .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+
+  @media (prefers-reduced-motion: reduce){
+    .btn,.nav-links a{transition:none}
+    .btn:hover,.btn:active{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">
+      <svg class="icon star" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+      PROXIMITY
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="fractional.html">Fractional Marketing</a>
+      <a href="teardown.html">The Teardown</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <div class="hero-top">
+    <div class="hero-copy">
+      <p class="eyebrow">About</p>
+      <h1>Thirteen years in, <span class="mark">still doing the work myself</span>.</h1>
+      <p class="lede">I'm Kayla Fargo. I've spent thirteen years inside B2B marketing and go-to-market — first climbing the ladder inside operating companies across B2B SaaS and K-12 education technology, then founding Proximity to do the same work fractionally, for a handful of companies at a time.</p>
+    </div>
+    <div class="hero-photo">
+      <div class="frame">
+        <img src="kayla.webp" alt="Kayla Fargo">
+      </div>
+      <div class="badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="zine-rule"><span class="glyph"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg></span></div>
+
+<section class="container">
+  <div class="timeline-bio">
+    <div class="tl-item">
+      <span class="tl-when">2013 – 2022</span>
+      <div class="tl-body">
+        <h3>Nine years building B2B SaaS marketing functions from the inside</h3>
+        <p>Before I went fractional, I spent nine years inside operating companies — leading product marketing and commercialization for SMB and mid-market B2B software, running go-to-market strategy and product launches end to end, rebuilding websites and demand generation programs to scale, and at one point leading and reorganizing a ten-person marketing and creative team that hit its targets every year I was there. That stretch spanned clinical research software, library and education software, and professional services — the foundation under everything I do now.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-when">2022 – 2023</span>
+      <div class="tl-body">
+        <h3>First marketing hire at a K-12 ed-tech company</h3>
+        <p>I built a marketing function from nothing, grew it to eight people in six months, and drove 200% pipeline growth to $50M in that same window. Created the company's first Customer Advisory Board, ran an eight-week brand overhaul, then carried the team through acquisition and integration.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-when">2023 – present</span>
+      <div class="tl-body">
+        <h3>Founding Proximity — fractional, several at once</h3>
+        <p>Since 2023 I've run overlapping fractional engagements across enterprise B2B software, K-12 ed-tech SaaS, and a pre-revenue B2B marketplace: growing a marketing-attributed pipeline 61% year over year — to $7.4M in 2025 — inside an established enterprise software company; rebuilding a K-12 ed-tech company's commercialization motion district by district; and building a marketplace's GTM foundation, HubSpot to website to content, from zero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="prose">
+    <p><strong>I've led teams of twenty-plus. I've also been the entire marketing department.</strong> Both of those are still true about how I work now — Proximity is fractional, but it isn't hands-off. I'm the strategist and the person actually doing the work, which is exactly how I like it.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="philosophy">
+    <p class="eyebrow on-dark">What I Believe</p>
+    <h2>The walls need to come down — not just between marketing and sales.</h2>
+    <p>The best work I've done happened when the wall between marketing and sales was down enough for me to actually see how deals were being won and lost, and adjust in real time — not publish a strategy document and hope someone downstream uses it.</p>
+    <p>That's not only a sales problem, either. Marketing makes bad calls when it doesn't sit close enough to product, to customer success, to whoever actually hears what customers say when no one from marketing is in the room.</p>
+    <p>I say the specific thing instead of the safe thing, because the specific thing is usually the only version that's actually useful to you.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="human-note">
+    <p>Outside client work, I'm a mom of two, and I write about the actual, unglamorous mechanics of this job — not the highlight reel — over on <a href="https://www.linkedin.com/in/kaylafargo/" target="_blank" rel="noopener">LinkedIn</a>, and on <a href="https://www.tiktok.com/@kaylamaefargo" target="_blank" rel="noopener">TikTok</a>. If you want a sense of how I think before you ever get on a call with me, that's the place to look.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Let's talk about what you're actually dealing with.</h2>
+    <p class="lede">Twenty minutes, no pitch deck. Bring the real problem.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Proximity — Kayla Fargo</span>
+    <div class="foot-links">
+      <a href="roadmap.html">AI Agent Roadmap</a>
+      <a href="index.html">Home</a>
+      <a href="teardown.html">The Teardown</a>
+      <a href="fractional.html">Fractional Marketing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

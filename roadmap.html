@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Agent Roadmap &middot; Proximity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2ECDD; --card:#FBF7EA; --ink:#1C310B; --ink-soft:#4B5A3E;
+    --evergreen:#2E4A39; --navy:#17384A;
+    --olive:#8E7A09; --rust:#C0562C; --rust-dark:#9C4322;
+    --sea-mist:#9AB1A0; --pistachio:#F5F9D2;
+    --serif: "Yeseva One", Georgia, "Times New Roman", serif;
+    --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background-color:var(--paper);
+    background-image:radial-gradient(circle, rgba(28,49,11,.08) 1px, transparent 1.5px);
+    background-size:16px 16px;
+    color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  ::selection{background:var(--rust);color:var(--paper)}
+  :focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+  .wrap{max-width:600px;margin:0 auto;padding-inline:22px}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--evergreen);text-wrap:balance;margin:0}
+  p{margin:0}
+  .mark{text-decoration:underline;text-decoration-color:var(--rust);text-decoration-thickness:.3em;text-underline-offset:-.08em;text-decoration-skip-ink:none}
+  .icon{display:inline-block;vertical-align:-2px;flex-shrink:0}
+
+  .pill{
+    display:inline-block;font-family:var(--sans);font-weight:800;font-size:.78rem;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--evergreen);background:var(--pistachio);
+    border:1.5px dashed var(--olive);border-radius:2px;padding:6px 13px;
+    transform:rotate(-1.6deg);margin:0 0 18px;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:800;font-size:1rem;
+    letter-spacing:.02em;text-decoration:none;padding:16px 26px;border:2px solid var(--ink);border-radius:2px;
+    box-shadow:4px 4px 0 var(--ink);transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1);
+    width:100%;
+  }
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .btn-primary{background:var(--rust);color:var(--paper)}
+  .btn-ghost-light{background:transparent;color:var(--paper);border-color:rgba(242,236,221,.7);box-shadow:4px 4px 0 rgba(242,236,221,.35)}
+  .btn-ghost-light:hover{box-shadow:2px 2px 0 rgba(242,236,221,.35)}
+
+  header.masthead{padding:20px 0 4px;background:var(--paper);box-shadow:0 3px 0 var(--evergreen),0 6px 0 var(--olive)}
+  header.masthead .wrap{display:flex;align-items:center}
+  .wordmark{font-family:var(--sans);font-weight:800;letter-spacing:.15em;font-size:1rem;color:var(--evergreen);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px}
+  .wordmark .star{color:var(--rust)}
+
+  section{padding-block:clamp(30px,6vw,48px)}
+  .hero{padding-top:clamp(38px,7vw,56px)}
+  .hero h1{font-size:clamp(2rem,8vw,2.7rem);line-height:1.12}
+  .hero .lede{font-size:1.1rem;line-height:1.6;color:var(--ink-soft);margin-top:16px}
+  .hero .btn{margin-top:26px}
+
+  .zine-rule{height:0;border-top:3px dashed var(--evergreen);position:relative;margin:0}
+  .zine-rule .glyph{position:absolute;top:0;left:50%;transform:translate(-50%,-50%) rotate(-8deg);background:var(--paper);color:var(--rust);padding:0 12px;display:flex}
+
+  h2.section-h{font-size:1.4rem;line-height:1.25;margin-bottom:14px}
+  .prose p{color:var(--ink-soft);font-size:1.02rem}
+
+  .steps{display:flex;flex-direction:column;gap:0;border-top:2px dashed var(--sea-mist);margin-top:18px}
+  .step{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:18px 0;border-bottom:2px dashed var(--sea-mist)}
+  .step-num{
+    display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;
+    border:2px solid var(--ink);background:var(--pistachio);font-family:var(--serif);color:var(--evergreen);
+    font-size:1rem;transform:rotate(-4deg);flex-shrink:0;
+  }
+  .step:nth-child(even) .step-num{transform:rotate(4deg)}
+  .step p{color:var(--ink-soft);font-size:.98rem;margin-top:4px}
+  .step strong{color:var(--ink)}
+
+  .walk-list{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+  .walk-list li{display:flex;gap:10px;align-items:flex-start;font-size:1rem;color:var(--ink-soft)}
+  .walk-list .icon{color:var(--evergreen);margin-top:4px}
+
+  .guarantee-card{
+    background:var(--card);border:2px solid var(--ink);border-radius:3px;padding:24px;
+    box-shadow:6px 6px 0 var(--rust);margin-top:6px;
+  }
+  .guarantee-card p{font-size:1.04rem;color:var(--ink)}
+  .guarantee-card strong{color:var(--evergreen)}
+
+  .cta-band{background:var(--navy);color:var(--paper);position:relative;overflow:hidden}
+  .cta-band::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle, rgba(242,236,221,.1) 1px, transparent 1.5px);
+    background-size:16px 16px;pointer-events:none;
+  }
+  .cta-band .wrap{position:relative;padding-block:clamp(38px,7vw,56px)}
+  .cta-band h2{color:var(--paper);font-size:clamp(1.6rem,6vw,2.1rem)}
+  .cta-band .line{color:rgba(242,236,221,.8);margin-top:10px;font-size:1.02rem}
+  .cta-band .btn{margin-top:22px}
+
+  .stamp{
+    position:absolute;top:-18px;right:-10px;width:118px;height:118px;flex-shrink:0;border-radius:50%;
+    border:2px dashed var(--rust);display:flex;align-items:center;justify-content:center;
+    transform:rotate(9deg);background:var(--navy);
+  }
+  .stamp::before{content:"";position:absolute;inset:9px;border:1.5px solid var(--rust);border-radius:50%}
+  .stamp-text{text-align:center;color:var(--rust);font-weight:800;font-size:.56rem;letter-spacing:.05em;text-transform:uppercase;line-height:1.55;padding:0 10px}
+
+  .fine-print{padding-block:22px}
+  .fine-print p{font-size:.82rem;color:var(--ink-soft);line-height:1.6}
+  .fine-print a{color:var(--olive);font-weight:700;text-decoration:none}
+  .fine-print a:hover{text-decoration:underline}
+
+  footer.site-footer{background:var(--navy);border-top:3px solid var(--olive);color:rgba(242,236,221,.5);text-align:center}
+  footer.site-footer .wrap{padding-block:20px;font-size:.82rem}
+
+  @media (prefers-reduced-motion: reduce){
+    .btn{transition:none}
+    .btn:hover,.btn:active{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">
+      PROXIMITY<svg class="icon star" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+    </a>
+  </div>
+</header>
+
+<header class="hero wrap">
+  <span class="pill">Founding spot &middot; 5 available</span>
+  <h1>Your AI agent <span class="mark">roadmap.</span></h1>
+  <p class="lede">You use ChatGPT or Claude every day. You haven't built anything that runs without you. Let's fix that.</p>
+  <a class="btn btn-primary" href="https://buy.stripe.com/3cI14n5gTezec9M8FnfrW00">Claim a founding spot, $350</a>
+</header>
+
+<div class="wrap"><div class="zine-rule"><span class="glyph"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg></span></div></div>
+
+<section class="wrap">
+  <h2 class="section-h">Who this is for</h2>
+  <div class="prose">
+    <p>Marketing and sales people. Leaders or ICs. Content, product, brand, demand, sales. If you've got recurring work eating your week and you've been meaning to figure out agents, this is for you. No coding required.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="section-h">How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">1</span>
+      <p><strong>You tell me what's eating your week.</strong> A short intake after checkout: your recurring tasks, roughly how long each takes, and the tools you use.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">2</span>
+      <p><strong>We spend 30 minutes on it.</strong> I pressure test the list and find which of it agents can actually take over.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">3</span>
+      <p><strong>You get your roadmap in 48 hours.</strong> Every agent worth building, ranked, with the prompts and step by step setup to build them yourself. One is marked build this first.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="section-h">What you walk away with</h2>
+  <ul class="walk-list">
+    <li><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>A ranked list of the agents worth building for your job</span></li>
+    <li><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>Starter prompts for each</span></li>
+    <li><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>Build guidelines you can follow without a developer</span></li>
+    <li><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L10 18 L20 6"/></svg><span>The one to start with, and why</span></li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2 class="section-h">The guarantee</h2>
+  <div class="guarantee-card">
+    <p>If the first agent on your roadmap won't save you at least <strong>$350</strong> worth of time in its first month, you get a full refund.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="section-h">Why me</h2>
+  <div class="prose">
+    <p>I've spent 15 years in B2B marketing and go to market. I build and run agents in my own work every week, including one that replaced what used to be a $20,000 a month agency contract. I only recommend what I've actually built. Show your work.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="stamp"><span class="stamp-text">Saves you $350<br>or it's free</span></div>
+    <h2>Five founding spots. $350.</h2>
+    <p class="line">The price goes up when these are gone.</p>
+    <a class="btn btn-primary" href="https://buy.stripe.com/3cI14n5gTezec9M8FnfrW00">Claim a founding spot</a>
+  </div>
+</section>
+
+<div class="wrap fine-print">
+  <p>Written roadmap, not a done for you build. Reschedule up to 24 hours out. You'll need a paid plan on an agentic AI tool (Claude or ChatGPT); I'll tell you before the call if you need to upgrade. Full terms: <a href="roadmap-terms.html">terms</a>.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">Proximity &middot; Kayla Fargo</div>
+</footer>
+
+</body>
+</html>

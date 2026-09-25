@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>You're In &middot; Proximity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2ECDD; --card:#FBF7EA; --ink:#1C310B; --ink-soft:#4B5A3E;
+    --evergreen:#2E4A39; --navy:#17384A;
+    --olive:#8E7A09; --rust:#C0562C; --rust-dark:#9C4322;
+    --sea-mist:#9AB1A0; --pistachio:#F5F9D2;
+    --serif: "Yeseva One", Georgia, "Times New Roman", serif;
+    --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{
+    margin:0;background-color:var(--paper);
+    background-image:radial-gradient(circle, rgba(28,49,11,.08) 1px, transparent 1.5px);
+    background-size:16px 16px;
+    color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+    min-height:100vh;display:flex;flex-direction:column;
+  }
+  a{color:inherit}
+  ::selection{background:var(--rust);color:var(--paper)}
+  :focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+  .wrap{max-width:520px;margin:0 auto;padding-inline:22px;width:100%}
+  h1{font-family:var(--serif);font-weight:400;color:var(--evergreen);text-wrap:balance;margin:0;font-size:clamp(2.2rem,8vw,2.8rem)}
+  p{margin:0}
+
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:800;font-size:1rem;
+    letter-spacing:.02em;text-decoration:none;padding:16px 26px;border:2px solid var(--ink);border-radius:2px;
+    box-shadow:4px 4px 0 var(--ink);transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1);
+  }
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .btn-primary{background:var(--rust);color:var(--paper)}
+  .btn-ghost{background:var(--card);color:var(--evergreen)}
+
+  header.masthead{padding:20px 0 4px;background:var(--paper);box-shadow:0 3px 0 var(--evergreen),0 6px 0 var(--olive)}
+  .wordmark{font-family:var(--sans);font-weight:800;letter-spacing:.15em;font-size:1rem;color:var(--evergreen);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px}
+  .wordmark .star{color:var(--rust)}
+
+  main{flex:1;display:flex;align-items:center;padding-block:40px}
+  .line{font-size:1.1rem;color:var(--ink-soft);margin-top:14px}
+
+  .steps{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+  .step-card{background:var(--card);border:2px solid var(--ink);border-radius:3px;padding:22px;box-shadow:6px 6px 0 var(--sea-mist)}
+  .step-card .step-num{
+    display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+    border:2px solid var(--ink);background:var(--pistachio);font-family:var(--serif);color:var(--evergreen);
+    font-size:.95rem;transform:rotate(-4deg);margin-bottom:12px;
+  }
+  .step-card h3{font-size:1.1rem;color:var(--evergreen);margin-bottom:10px;font-family:var(--serif);font-weight:400}
+  .small-line{margin-top:28px;font-size:.92rem;color:var(--ink-soft)}
+  .small-line a{color:var(--olive);font-weight:700;text-decoration:none}
+  .small-line a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap" style="display:flex;align-items:center">
+    <a class="wordmark" href="index.html">
+      PROXIMITY<svg class="icon star" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>You're in.</h1>
+    <p class="line">Two quick things and we're set.</p>
+    <div class="steps">
+      <div class="step-card">
+        <span class="step-num">1</span>
+        <h3>Book your call</h3>
+        <a class="btn btn-primary" href="https://app.reclaim.ai/m/kayla-fargo/high-priority-meeting">Book your call</a>
+      </div>
+      <div class="step-card">
+        <span class="step-num">2</span>
+        <h3>Fill out the intake (10 minutes, do it before the call)</h3>
+        <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSec6Dx6-3BHczvFlnUPXWoFo2LdISL-JDhUg1cKPrC7tX3PuA/viewform?usp=header" target="_blank" rel="noopener">Fill out the intake</a>
+      </div>
+    </div>
+    <p class="small-line">Questions? Email <a href="mailto:kayla@byproximity.com">kayla@byproximity.com</a>.</p>
+  </div>
+</main>
+
+</body>
+</html>

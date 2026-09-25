@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fractional Marketing &amp; GTM — Proximity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2ECDD; --card:#FBF7EA; --ink:#1C310B; --ink-soft:#4B5A3E;
+    --evergreen:#2E4A39; --navy:#17384A;
+    --olive:#8E7A09; --rust:#C0562C; --rust-dark:#9C4322;
+    --sea-mist:#9AB1A0; --pistachio:#F5F9D2;
+    --serif: "Yeseva One", Georgia, "Times New Roman", serif;
+    --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background-color:var(--paper);
+    background-image:radial-gradient(circle, rgba(28,49,11,.08) 1px, transparent 1.5px);
+    background-size:16px 16px;
+    color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  ::selection{background:var(--rust);color:var(--paper)}
+  :focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+  .container{max-width:1120px;margin:0 auto;padding-inline:clamp(20px,5vw,48px)}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--evergreen);text-wrap:balance;margin:0}
+  p{margin:0}
+  .mark{text-decoration:underline;text-decoration-color:var(--rust);text-decoration-thickness:.3em;text-underline-offset:-.08em;text-decoration-skip-ink:none}
+  .icon{display:inline-block;vertical-align:-2px}
+  .eyebrow{
+    display:inline-block;font-family:var(--sans);font-weight:800;font-size:.74rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--evergreen);background:var(--pistachio);
+    border:1.5px dashed var(--olive);border-radius:2px;padding:5px 12px;
+    transform:rotate(-1.6deg);margin:0 0 16px;
+  }
+  .eyebrow.on-dark{background:transparent;border-color:rgba(242,236,221,.55);color:var(--pistachio)}
+  .lede{font-size:1.2rem;line-height:1.6;color:var(--ink-soft);max-width:62ch}
+  .prose p{max-width:66ch;font-size:1.06rem;color:var(--ink-soft)}
+  .prose p + p{margin-top:1.1em}
+  .prose strong{color:var(--ink)}
+
+  .site-nav{position:sticky;top:0;z-index:40;background:var(--paper);box-shadow:0 3px 0 var(--evergreen),0 6px 0 var(--olive)}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:18px clamp(20px,5vw,48px) 14px;display:flex;align-items:center;gap:24px}
+  .wordmark{font-family:var(--sans);font-weight:800;letter-spacing:.15em;font-size:1.05rem;color:var(--evergreen);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:7px}
+  .wordmark .star{color:var(--rust)}
+  .nav-links{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{
+    font-size:.83rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+    padding-bottom:3px;background-image:linear-gradient(var(--olive) 0 0);background-repeat:no-repeat;
+    background-size:0% .28em;background-position:0 100%;transition:background-size .25s cubic-bezier(.16,1,.3,1),color .25s cubic-bezier(.16,1,.3,1);
+  }
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--evergreen);background-size:100% .28em}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:800;font-size:.92rem;
+    letter-spacing:.02em;text-decoration:none;padding:13px 24px;border:2px solid var(--ink);border-radius:2px;
+    box-shadow:4px 4px 0 var(--ink);transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1);
+  }
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .btn-primary{background:var(--rust);color:var(--paper)}
+  .btn-ghost{background:var(--card);color:var(--evergreen)}
+  .btn-ghost-light{background:transparent;color:var(--paper);border-color:rgba(242,236,221,.7);box-shadow:4px 4px 0 rgba(242,236,221,.35)}
+  .btn-ghost-light:hover{box-shadow:2px 2px 0 rgba(242,236,221,.35)}
+
+  .hero{padding:clamp(48px,8vw,84px) 0 clamp(28px,5vw,48px)}
+  .hero h1{font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.1;max-width:19ch}
+  .hero .lede{margin-top:18px}
+
+  section{padding-block:clamp(38px,6vw,72px)}
+  .zine-rule{height:0;border-top:3px dashed var(--evergreen);position:relative;margin:0}
+  .zine-rule .glyph{position:absolute;top:0;left:50%;transform:translate(-50%,-50%) rotate(-8deg);background:var(--paper);color:var(--rust);padding:0 12px;display:flex}
+  .section-head{max-width:64ch;margin-bottom:30px}
+  .section-head h2{font-size:clamp(1.5rem,3vw,2.05rem);line-height:1.2}
+
+  /* areas list */
+  .areas{display:flex;flex-direction:column;border-top:2px dashed var(--sea-mist)}
+  .area-row{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-bottom:2px dashed var(--sea-mist)}
+  .area-num{
+    display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;
+    border:2px solid var(--ink);background:var(--pistachio);color:var(--evergreen);
+    transform:rotate(-5deg);
+  }
+  .area-num svg{width:22px;height:22px}
+  .area-row:nth-child(even) .area-num{transform:rotate(5deg)}
+  .area-body h3{font-size:1.25rem;margin-bottom:8px}
+  .area-body p{color:var(--ink-soft);font-size:1rem;max-width:62ch}
+  @media (max-width:600px){.area-row{grid-template-columns:1fr}}
+
+  /* proof card */
+  .proof-card{background:var(--evergreen);color:var(--paper);border-radius:6px;border:2px solid var(--ink);padding:clamp(30px,5vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;position:relative}
+  .proof-card::before{content:"";position:absolute;top:-14px;left:38px;width:82px;height:26px;background:rgba(197,178,50,.32);border:1px solid rgba(197,178,50,.5);transform:rotate(-4deg)}
+  @media (max-width:760px){.proof-card{grid-template-columns:1fr}}
+  .proof-card .eyebrow{color:var(--pistachio)}
+  .proof-card h3{color:var(--paper);font-size:1.4rem;margin-bottom:12px}
+  .proof-card p{color:rgba(242,236,221,.85);font-size:.98rem}
+  .proof-stats{display:flex;flex-direction:column;gap:14px}
+  .proof-stat{
+    display:flex;align-items:baseline;gap:10px;background:rgba(242,236,221,.08);
+    border:1.5px dashed rgba(242,236,221,.4);border-radius:3px;padding:10px 14px;
+  }
+  .proof-stat b{font-family:var(--serif);font-size:1.7rem;color:var(--pistachio);white-space:nowrap}
+  .proof-stat span{font-size:.85rem;color:rgba(242,236,221,.75)}
+
+  .cta-band{background:var(--navy);color:var(--paper)}
+  .cta-band .container{padding-block:clamp(48px,8vw,84px)}
+  .cta-band h2{color:var(--paper);font-size:clamp(1.75rem,3.4vw,2.4rem);max-width:22ch}
+  .cta-band .lede{color:rgba(242,236,221,.8);margin-top:14px}
+  .cta-band .hero-ctas{margin-top:28px;display:flex;gap:16px;flex-wrap:wrap}
+  .engagement-options{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+  @media (max-width:760px){.engagement-options{grid-template-columns:1fr}}
+  .eo{border:1.5px dashed rgba(242,236,221,.4);border-radius:3px;padding:16px 18px;background:rgba(242,236,221,.06)}
+  .eo h3{font-family:var(--serif);font-weight:400;color:var(--paper);font-size:1.05rem;margin-bottom:6px}
+  .eo p{color:rgba(242,236,221,.8);font-size:.92rem;margin:0}
+
+  footer.site-footer{background:var(--navy);border-top:3px solid var(--olive);color:rgba(242,236,221,.65)}
+  footer.site-footer .container{padding-block:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:.86rem}
+  footer.site-footer a{color:rgba(242,236,221,.85);text-decoration:none}
+  footer.site-footer a:hover{color:var(--paper)}
+  footer.site-footer .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+
+  @media (prefers-reduced-motion: reduce){
+    .btn,.nav-links a{transition:none}
+    .btn:hover,.btn:active{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">
+      <svg class="icon star" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+      PROXIMITY
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="fractional.html" aria-current="page">Fractional Marketing</a>
+      <a href="teardown.html">The Teardown</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <p class="eyebrow">Fractional Marketing &amp; GTM</p>
+  <h1>Sometimes you need someone to <span class="mark">rebuild the sales deck</span>. Sometimes you need someone to run the department.</h1>
+  <p class="lede">I do practitioner work — sales enablement, product marketing, demand gen, brand — for B2B companies, and I do embedded leadership running the whole function. Same standard either way. You tell me the altitude the company actually needs.</p>
+</header>
+
+<div class="zine-rule"><span class="glyph"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg></span></div>
+
+<section class="container">
+  <div class="section-head">
+    <h2>Five areas. I go as deep into each one as the company actually needs.</h2>
+  </div>
+  <div class="areas">
+    <div class="area-row">
+      <span class="area-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9 L12 12 L9 15 L12 12Z"/></svg></span>
+      <div class="area-body">
+        <h3>Go-to-market strategy &amp; positioning</h3>
+        <p>Where the company is, where it's trying to get to, and what has to be true about the market's understanding of you to close that gap.</p>
+      </div>
+    </div>
+    <div class="area-row">
+      <span class="area-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9v6h4l9 5V4L7 9H3Z"/><path d="M18 9a3 3 0 0 1 0 6"/></svg></span>
+      <div class="area-body">
+        <h3>Product marketing</h3>
+        <p>Positioning, launch plans, and sales enablement that actually gets used on calls — not left in a shared drive nobody opens after the kickoff.</p>
+      </div>
+    </div>
+    <div class="area-row">
+      <span class="area-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16l-6 8v6l-4 2v-8Z"/></svg></span>
+      <div class="area-body">
+        <h3>Demand generation</h3>
+        <p>The channels worth the spend, and — just as useful to know — the ones you should stop funding.</p>
+      </div>
+    </div>
+    <div class="area-row">
+      <span class="area-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l4-1 12-12a2 2 0 0 0-3-3L4 17Z"/><path d="M13 6l3 3"/></svg></span>
+      <div class="area-body">
+        <h3>Brand &amp; content</h3>
+        <p>A brand overhaul doesn't have to take a year. I ran one in eight weeks at a mid-scale-up, without stopping everything else the team was doing.</p>
+      </div>
+    </div>
+    <div class="area-row">
+      <span class="area-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.3"/><path d="M15.2 20a5 5 0 0 1 5.8-5.6"/></svg></span>
+      <div class="area-body">
+        <h3>Building the team</h3>
+        <p>I've grown a marketing function from one person to eight in six months. I know what the first five hires should actually be, and in what order.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="proof-card">
+    <div>
+      <p class="eyebrow on-dark">Why This Isn't Theoretical</p>
+      <h3>Building a B2B marketing function from the ground up</h3>
+      <p>I've been a company's first marketing hire. Six months later there were eight of us, pipeline was up 200% to $50M, and we'd built the company's first Customer Advisory Board. I led the team through an eight-week brand overhaul, then through an acquisition and integration.</p>
+    </div>
+    <div class="proof-stats">
+      <div class="proof-stat"><b>1 → 8</b><span>Marketing team, built in 6 months</span></div>
+      <div class="proof-stat"><b>200%</b><span>Pipeline growth to $50M, same 6 months</span></div>
+      <div class="proof-stat"><b>8 weeks</b><span>Full brand overhaul, mid-scale-up</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Scoped to the company, not sold off a rate card.</h2>
+    <p class="lede">Tell me what marketing looks like at your company right now, and what it's missing. I'd rather scope it honestly than sell you more than the stage of your company needs.</p>
+    <div class="engagement-options">
+      <div class="eo">
+        <h3>A scoped project</h3>
+        <p>Rebuild the sales enablement library, launch a product properly. A clear start and a clear end.</p>
+      </div>
+      <div class="eo">
+        <h3>A few hours a week</h3>
+        <p>Direction and a hand on the wheel for an early-stage team.</p>
+      </div>
+      <div class="eo">
+        <h3>Ongoing, embedded</h3>
+        <p>Running the function day to day for a company at scale.</p>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
+      <a class="btn btn-ghost-light" href="teardown.html">Or start with the Teardown</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Proximity — Kayla Fargo</span>
+    <div class="foot-links">
+      <a href="roadmap.html">AI Agent Roadmap</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="teardown.html">The Teardown</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
