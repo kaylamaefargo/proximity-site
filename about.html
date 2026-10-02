@@ -18,126 +18,10 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "@id": "https://byproximity.com/#kayla", "name": "Kayla Fargo", "jobTitle": "Fractional CMO and B2B go-to-market consultant", "url": "https://byproximity.com/about.html", "image": "https://byproximity.com/kayla.webp", "email": "kayla@byproximity.com", "worksFor": {"@id": "https://byproximity.com/#proximity"}, "sameAs": ["https://www.linkedin.com/in/kaylafargo/", "https://www.tiktok.com/@kaylamaefargo"], "knowsAbout": ["Fractional CMO", "B2B marketing", "Go-to-market strategy", "Product marketing", "Sales enablement", "Demand generation", "HubSpot", "Marketing operations"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#F2ECDD; --card:#FBF7EA; --ink:#1C310B; --ink-soft:#4B5A3E;
-    --evergreen:#2E4A39; --navy:#17384A;
-    --olive:#8E7A09; --rust:#C0562C; --rust-dark:#9C4322;
-    --sea-mist:#9AB1A0; --pistachio:#F5F9D2;
-    --serif: "Yeseva One", Georgia, "Times New Roman", serif;
-    --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;background-color:var(--paper);
-    background-image:radial-gradient(circle, rgba(28,49,11,.08) 1px, transparent 1.5px);
-    background-size:16px 16px;
-    color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit}
-  ::selection{background:var(--rust);color:var(--paper)}
-  :focus-visible{outline:2px solid var(--rust);outline-offset:2px}
-  .container{max-width:1120px;margin:0 auto;padding-inline:clamp(20px,5vw,48px)}
-  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--evergreen);text-wrap:balance;margin:0}
-  p{margin:0}
-  .mark{text-decoration:underline;text-decoration-color:var(--rust);text-decoration-thickness:.3em;text-underline-offset:-.08em;text-decoration-skip-ink:none}
-  .icon{display:inline-block;vertical-align:-2px}
-  .eyebrow{
-    display:inline-block;font-family:var(--sans);font-weight:800;font-size:.74rem;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--evergreen);background:var(--pistachio);
-    border:1.5px dashed var(--olive);border-radius:2px;padding:5px 12px;
-    transform:rotate(-1.6deg);margin:0 0 16px;
-  }
-  .eyebrow.on-dark{background:transparent;border-color:rgba(242,236,221,.55);color:var(--pistachio)}
-  .lede{font-size:1.2rem;line-height:1.6;color:var(--ink-soft);max-width:62ch}
-  .prose p{max-width:64ch;font-size:1.06rem;color:var(--ink-soft)}
-  .prose p + p{margin-top:1.15em}
-  .prose strong{color:var(--ink)}
-
-  .site-nav{position:sticky;top:0;z-index:40;background:var(--paper);box-shadow:0 3px 0 var(--evergreen),0 6px 0 var(--olive)}
-  .nav-inner{max-width:1120px;margin:0 auto;padding:18px clamp(20px,5vw,48px) 14px;display:flex;align-items:center;gap:24px}
-  .wordmark{font-family:var(--sans);font-weight:800;letter-spacing:.15em;font-size:1.05rem;color:var(--evergreen);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:7px}
-  .wordmark .star{color:var(--rust)}
-  .nav-links{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
-  .nav-links a{
-    font-size:.83rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
-    padding-bottom:3px;background-image:linear-gradient(var(--olive) 0 0);background-repeat:no-repeat;
-    background-size:0% .28em;background-position:0 100%;transition:background-size .25s cubic-bezier(.16,1,.3,1),color .25s cubic-bezier(.16,1,.3,1);
-  }
-  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--evergreen);background-size:100% .28em}
-
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:800;font-size:.92rem;
-    letter-spacing:.02em;text-decoration:none;padding:13px 24px;border:2px solid var(--ink);border-radius:2px;
-    box-shadow:4px 4px 0 var(--ink);transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1);
-  }
-  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
-  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
-  .btn-primary{background:var(--rust);color:var(--paper)}
-  .btn-ghost{background:var(--card);color:var(--evergreen)}
-
-  .hero{padding:clamp(48px,8vw,84px) 0 clamp(24px,4vw,40px)}
-  .hero-top{display:flex;gap:36px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap-reverse}
-  .hero-copy{flex:1;min-width:280px}
-  .hero h1{font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.1;max-width:20ch}
-  .hero .lede{margin-top:18px}
-
-  .hero-photo{position:relative;flex-shrink:0;width:230px;height:288px;margin-top:-22px}
-  .hero-photo .frame{position:absolute;inset:0;border:2px solid var(--ink);overflow:hidden}
-  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .hero-photo .badge{
-    position:absolute;top:-16px;left:-16px;width:52px;height:52px;border-radius:50%;
-    background:var(--rust);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;
-    color:var(--paper);transform:rotate(-10deg);
-  }
-  @media (max-width:540px){.hero-photo{width:160px;height:200px;margin-top:0}.hero-photo .badge{width:40px;height:40px;top:-10px;left:-10px}}
-
-  section{padding-block:clamp(32px,5vw,60px)}
-  .zine-rule{height:0;border-top:3px dashed var(--evergreen);position:relative;margin:0}
-  .zine-rule .glyph{position:absolute;top:0;left:50%;transform:translate(-50%,-50%) rotate(-8deg);background:var(--paper);color:var(--rust);padding:0 12px;display:flex}
-
-  .timeline-bio{display:flex;flex-direction:column;gap:0;border-top:2px dashed var(--sea-mist)}
-  .tl-item{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:26px 0;border-bottom:2px dashed var(--sea-mist)}
-  @media (max-width:640px){.tl-item{grid-template-columns:1fr;gap:6px}}
-  .tl-when{display:inline-block;font-family:var(--sans);font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem;color:var(--evergreen);
-    text-decoration:underline;text-decoration-color:var(--rust);text-decoration-thickness:.22em;text-underline-offset:-.05em;text-decoration-skip-ink:none;width:fit-content}
-  .tl-body h3{font-size:1.2rem;margin-bottom:8px;color:var(--evergreen)}
-  .tl-body p{color:var(--ink-soft);font-size:1rem;max-width:62ch}
-
-  .philosophy{background:var(--evergreen);color:var(--paper);border-radius:6px;border:2px solid var(--ink);padding:clamp(30px,5vw,52px);position:relative}
-  .philosophy::before{content:"";position:absolute;top:-14px;left:38px;width:82px;height:26px;background:rgba(197,178,50,.32);border:1px solid rgba(197,178,50,.5);transform:rotate(-4deg)}
-  .philosophy .eyebrow{color:var(--pistachio)}
-  .philosophy h2{color:var(--paper);font-size:clamp(1.4rem,2.8vw,1.9rem);max-width:24ch;margin-bottom:18px}
-  .philosophy p{color:rgba(242,236,221,.88);max-width:64ch;font-size:1.03rem}
-  .philosophy p+p{margin-top:1em}
-
-  .human-note{border-left:3px dashed var(--sea-mist);padding-left:22px;margin-top:8px}
-  .human-note p{color:var(--ink-soft);font-size:1.03rem;max-width:62ch}
-  .human-note a{color:var(--olive);font-weight:700;text-decoration:none}
-  .human-note a:hover{text-decoration:underline}
-
-  .cta-band{background:var(--navy);color:var(--paper)}
-  .cta-band .container{padding-block:clamp(48px,8vw,84px)}
-  .cta-band h2{color:var(--paper);font-size:clamp(1.75rem,3.4vw,2.4rem);max-width:18ch}
-  .cta-band .lede{color:rgba(242,236,221,.8);margin-top:14px}
-  .cta-band .hero-ctas{margin-top:24px;display:flex;gap:16px;flex-wrap:wrap}
-
-  footer.site-footer{background:var(--navy);border-top:3px solid var(--olive);color:rgba(242,236,221,.65)}
-  footer.site-footer .container{padding-block:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:.86rem}
-  footer.site-footer a{color:rgba(242,236,221,.85);text-decoration:none}
-  footer.site-footer a:hover{color:var(--paper)}
-  footer.site-footer .foot-links{display:flex;gap:20px;flex-wrap:wrap}
-
-  @media (prefers-reduced-motion: reduce){
-    .btn,.nav-links a{transition:none}
-    .btn:hover,.btn:active{transform:none}
-  }
-</style>
-<link rel="stylesheet" href="extras.css">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="about">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".04 .06" numOctaves="3" seed="4" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="2.6"/></filter></svg>
 
 <nav class="site-nav">
@@ -215,14 +99,20 @@
     <p>The best work I've done happened when the wall between marketing and sales was down enough for me to actually see how deals were being won and lost, and adjust in real time — not publish a strategy document and hope someone downstream uses it.</p>
     <p>That's not only a sales problem, either. Marketing makes bad calls when it doesn't sit close enough to product, to customer success, to whoever actually hears what customers say when no one from marketing is in the room.</p>
     <p>I say the specific thing instead of the safe thing, because the specific thing is usually the only version that's actually useful to you.</p>
+    <div class="phil-art"><img src="art/wall.svg" width="600" height="320" alt="Illustration of a brick wall between marketing and sales on one side and product and customer success on the other, with bricks falling out of the middle." loading="lazy"></div>
   </div>
 </section>
 
 <section class="container">
-  <figure class="testimonial" style="margin:0 0 0 0">
-    <p class="lead">Strategy without execution is useless – execution without strategy is aimless.</p>
-    <p>Or how I say it, the first relies on hope to succeed and the second relies on luck. Neither is an effective path, so it is imperative that every business identifies the key roles that need people who can operate on both levels. The builders, the growers, the leaders who can both tell you where to go and get you there.</p><p>Kayla Fargo is that type of leader and more. Kayla was able to come into our business and quickly come up to speed on our business and ICP – not just the basics, but the subtleties that provide all context for differentiated value and positioning. Kayla didn’t just tell us our weak points, she built and executed a plan to close those gaps. All of this in a very personable, partnering model that promotes the success of each of the individuals she works with in our business.</p><p>This combination of skills is very rare, and when you find it the business gets better very, very quickly. I very highly recommend Kayla and will be happy to speak with anyone who would like to learn more.</p>
-    <figcaption>Matt Mullen · Client</figcaption>
+  <figure class="testimonial">
+    <span class="q-badge">From a client CEO</span>
+    <span class="q-mark" aria-hidden="true">“</span>
+    <blockquote>
+      <p class="pull">Strategy without execution is useless – execution without strategy is aimless.</p>
+      <p>[…] Kayla was able to come into our business and quickly come up to speed on our business and ICP – not just the basics, but the subtleties that provide all context for differentiated value and positioning. Kayla didn’t just tell us our weak points, she built and executed a plan to close those gaps.</p>
+      <p>[…] This combination of skills is very rare, and when you find it the business gets better very, very quickly.</p>
+    </blockquote>
+    <figcaption><span class="who">Matt Mullen</span><span class="role">CEO · Enterprise software company</span></figcaption>
   </figure>
 </section>
 

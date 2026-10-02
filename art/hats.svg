@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 270" role="img" aria-labelledby="t d">
+  <title id="t">A rack of hats, one for each marketing job a team of one covers</title>
+  <desc id="d">Six hats hang from a wall rack, each tagged with a job: brand, organic, social, paid, events and ops.</desc>
+  <style>
+    .ink{stroke:#061F16;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+    .tag{font:800 10px/1 Arial,Helvetica,sans-serif;letter-spacing:.1em;fill:#061F16;text-anchor:middle}
+    .sway{transform-box:fill-box;transform-origin:50% 0;animation:sway 4s ease-in-out infinite}
+    .h2{animation-delay:-.7s}.h3{animation-delay:-1.4s}.h4{animation-delay:-2.1s}.h5{animation-delay:-2.8s}.h6{animation-delay:-3.4s}
+    @keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+    @media (prefers-reduced-motion:reduce){.sway{animation:none}}
+  </style>
+  <!-- rack -->
+  <rect x="14" y="18" width="632" height="16" rx="8" fill="#CFE9D6" class="ink"/>
+
+  <!-- 1 beret : BRAND -->
+  <g class="sway h1"><g transform="translate(65 34)">
+    <path d="M0 0 V22" stroke="#CFE9D6" stroke-width="3" fill="none"/>
+    <ellipse cx="0" cy="58" rx="40" ry="24" fill="#D6F24B" class="ink"/>
+    <path d="M-38 66 Q0 84 38 66" fill="none" class="ink"/><rect x="-3" y="24" width="6" height="10" rx="2" fill="#D6F24B" class="ink"/>
+    <rect x="-30" y="150" width="60" height="22" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" y="165">BRAND</text>
+  </g></g>
+  <!-- 2 bucket : ORGANIC -->
+  <g class="sway h2"><g transform="translate(176 34)">
+    <path d="M0 0 V26" stroke="#CFE9D6" stroke-width="3" fill="none"/>
+    <path d="M-30 30 H30 L38 76 H-38 Z" fill="#CFE9D6" class="ink"/>
+    <ellipse cx="0" cy="30" rx="30" ry="6" fill="#9FCDB0" class="ink"/>
+    <ellipse cx="0" cy="78" rx="52" ry="11" fill="#2E8F63" class="ink"/>
+    <path d="M-34 58 H34" stroke="#2E8F63" stroke-width="7" stroke-linecap="butt"/>
+    <rect x="-37" y="150" width="74" height="22" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" y="165">ORGANIC</text>
+  </g></g>
+  <!-- 3 cap : SOCIAL -->
+  <g class="sway h3"><g transform="translate(286 34)">
+    <path d="M0 0 V24" stroke="#CFE9D6" stroke-width="3" fill="none"/>
+    <path d="M-36 76 A36 40 0 0 1 36 76 Z" fill="#D6F24B" class="ink"/>
+    <path d="M18 76 Q62 74 58 88 L10 84 Z" fill="#B4D132" class="ink"/>
+    <circle cx="0" cy="38" r="4.5" fill="#B4D132" class="ink"/>
+    <rect x="-34" y="150" width="68" height="22" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" y="165">SOCIAL</text>
+  </g></g>
+  <!-- 4 top hat : PAID -->
+  <g class="sway h4"><g transform="translate(396 34)">
+    <path d="M0 0 V20" stroke="#CFE9D6" stroke-width="3" fill="none"/>
+    <path d="M-25 24 H25 L25 80 H-25 Z" fill="#2E8F63" class="ink"/>
+    <ellipse cx="0" cy="24" rx="25" ry="6" fill="#1B5E43" class="ink"/>
+    <ellipse cx="0" cy="82" rx="46" ry="10" fill="#2E8F63" class="ink"/>
+    <rect x="-25" y="62" width="50" height="12" fill="#D6F24B" class="ink"/>
+    <rect x="-29" y="150" width="58" height="22" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" y="165">PAID</text>
+  </g></g>
+  <!-- 5 party hat : EVENTS -->
+  <g class="sway h5"><g transform="translate(506 34)">
+    <path d="M0 0 V18" stroke="#CFE9D6" stroke-width="3" fill="none"/>
+    <path d="M0 22 L-30 84 H30 Z" fill="#CFE9D6" class="ink"/>
+    <path d="M-17 58 L17 58 M-24 72 L24 72" stroke="#2E8F63" stroke-width="6" fill="none"/>
+    <circle cx="0" cy="22" r="8" fill="#D6F24B" class="ink"/>
+    <rect x="-34" y="150" width="68" height="22" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" y="165">EVENTS</text>
+  </g></g>
+  <!-- 6 hard hat : OPS -->
+  <g class="sway h6"><g transform="translate(606 34)">
+    <path d="M0 0 V22" stroke="#CFE9D6" stroke-width="3" fill="none"/>
+    <path d="M-34 80 A34 38 0 0 1 34 80 Z" fill="#D6F24B" class="ink"/>
+    <rect x="-44" y="78" width="88" height="10" rx="5" fill="#B4D132" class="ink"/>
+    <path d="M-7 44 V80 M7 44 V80" stroke="#061F16" stroke-width="3" fill="none"/>
+    <rect x="-24" y="150" width="48" height="22" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" y="165">OPS</text>
+  </g></g>
+</svg>
