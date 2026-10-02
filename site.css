@@ -411,3 +411,4 @@ h2.section-h{font-size:1.6rem;line-height:1.15;margin-bottom:14px}
 .plan .p-price small{white-space:normal}
 .stamp.sm{width:112px;height:112px;font-size:.6rem;padding:10px}.stamp.sm b{font-size:1.25rem}
 html,body{overflow-x:clip}
+.hero-photo .frame{background:var(--g-800)}.hero-photo img{object-position:center}
