@@ -473,3 +473,4 @@ section[id]{scroll-margin-top:96px}
 .philosophy p + p{margin-top:1em}
 .philosophy .phil-art{align-self:center}
 .philosophy .phil-art img{width:100%;height:auto;display:block}
+.needs-grid.one{grid-template-columns:1fr;gap:14px}
