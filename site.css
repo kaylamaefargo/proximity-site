@@ -428,3 +428,17 @@ html,body{overflow-x:clip}
   .range-card:hover{transform:rotate(var(--rot,0deg)) translateY(-4px);box-shadow:7px 7px 0 var(--lime)}
 }
 @media (hover:none){.range-card:hover{transform:rotate(var(--rot,0deg))}}
+
+/* in-page jump links */
+.toc{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:clamp(28px,4vw,44px);padding-top:18px;border-top:2px dashed var(--g-700)}
+.toc span{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.toc a{font-size:.82rem;font-weight:700;color:var(--mint);text-decoration:none;border:2px solid var(--g-700);border-radius:999px;padding:5px 13px;transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
+.toc a:hover{background:var(--lime);color:var(--dark-ink);border-color:var(--lime)}
+section[id]{scroll-margin-top:96px}
+
+/* 30/60/90 */
+.path.days{grid-template-columns:repeat(3,1fr)}
+@media (max-width:820px){.path.days{grid-template-columns:1fr}}
+.path.days .path-step::before{content:attr(data-label);width:auto;height:40px;padding:0 16px;border-radius:999px;font-family:var(--sans);font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transform:rotate(-3deg)}
+.receipt table{min-width:880px}
+.plan .p-price small{line-height:1.45}
