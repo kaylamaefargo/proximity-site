@@ -412,3 +412,10 @@ h2.section-h{font-size:1.6rem;line-height:1.15;margin-bottom:14px}
 .stamp.sm{width:112px;height:112px;font-size:.6rem;padding:10px}.stamp.sm b{font-size:1.25rem}
 html,body{overflow-x:clip}
 .hero-photo .frame{background:var(--g-800)}.hero-photo img{object-position:center}
+
+/* squiggle gets breathing room: looser headline leading, lower and finer wave */
+.mark{text-decoration-thickness:.055em;text-underline-offset:.22em}
+.hero h1{line-height:1.17}
+.cta-band h2,.philosophy h2,.section-head h2{line-height:1.16}
+.hero h1{line-height:1.2}
+.mark{text-underline-offset:.2em}
