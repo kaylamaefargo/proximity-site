@@ -502,3 +502,7 @@ section[id]{scroll-margin-top:96px}
 .deliver-side h3{font-size:1.25rem;margin-bottom:6px}
 .deliver-side p{color:var(--muted);font-size:1rem}
 .report-stamp{color:var(--g-700);border-color:var(--g-700);background:var(--paper)}
+.report-disclaimer{margin:14px 18px 0;padding:10px 14px;background:var(--mint-50);border:2px dashed var(--g-500);border-radius:8px;font-size:.88rem;line-height:1.45;color:var(--dark-muted)}
+.report-disclaimer strong{color:var(--dark-ink)}
+.report-stamp{top:46px}
+.finding.first .report-stamp{position:absolute;top:-17px;right:-14px;z-index:2}
