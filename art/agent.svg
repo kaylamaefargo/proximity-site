@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="t d">
+  <title id="t">A friendly robot holding a ranked list</title>
+  <desc id="d">A small robot with a lime antenna holds up a numbered list, standing for a ranked roadmap of AI agents worth building.</desc>
+  <style>
+    .ink{stroke:#061F16;stroke-width:3.5;stroke-linejoin:round;stroke-linecap:round}
+    .blink{transform-box:fill-box;transform-origin:center;animation:blink 4.5s infinite}
+    .bob{animation:bob 3.2s ease-in-out infinite}
+    .glow{animation:glow 2.4s ease-in-out infinite}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    @keyframes glow{0%,100%{opacity:1}50%{opacity:.45}}
+    @media (prefers-reduced-motion:reduce){.blink,.bob,.glow{animation:none}}
+  </style>
+  <ellipse cx="116" cy="226" rx="70" ry="7" fill="#05190F" opacity=".55"/>
+  <g class="bob">
+    <!-- antenna -->
+    <path d="M118 52 V30" class="ink" fill="none"/>
+    <circle class="ink glow" cx="118" cy="24" r="9" fill="#D6F24B"/>
+    <!-- head -->
+    <rect x="58" y="52" width="120" height="92" rx="24" fill="#CFE9D6" class="ink"/>
+    <circle cx="52" cy="98" r="10" fill="#2E8F63" class="ink"/><circle cx="184" cy="98" r="10" fill="#2E8F63" class="ink"/>
+    <rect x="74" y="68" width="88" height="60" rx="14" fill="#0F3D2C" class="ink"/>
+    <rect class="blink" x="92" y="84" width="14" height="20" rx="6" fill="#D6F24B"/>
+    <rect class="blink" x="130" y="84" width="14" height="20" rx="6" fill="#D6F24B"/>
+    <path d="M102 114 Q118 124 134 114" fill="none" stroke="#D6F24B" stroke-width="5" stroke-linecap="round"/>
+    <!-- body -->
+    <rect x="76" y="152" width="84" height="60" rx="18" fill="#2E8F63" class="ink"/>
+    <circle cx="118" cy="182" r="12" fill="#D6F24B" class="ink"/><path d="M118 175v14M111 182h14" stroke="#061F16" stroke-width="3" stroke-linecap="round"/>
+    <path d="M96 212v12M140 212v12" class="ink" fill="none" stroke-width="7"/>
+    <!-- arm + list -->
+    <path d="M158 172 Q184 176 190 150" class="ink" fill="none" stroke-width="13"/>
+    <path d="M158 172 Q184 176 190 150" fill="none" stroke="#2E8F63" stroke-width="7" stroke-linecap="round"/>
+    <path d="M78 176 Q58 182 52 200" class="ink" fill="none" stroke-width="13"/>
+    <path d="M78 176 Q58 182 52 200" fill="none" stroke="#2E8F63" stroke-width="7" stroke-linecap="round"/>
+    <g transform="rotate(9 200 120)">
+      <rect x="170" y="70" width="58" height="82" rx="6" fill="#F2F8EE" class="ink"/>
+      <circle cx="184" cy="88" r="6" fill="#D6F24B" class="ink" stroke-width="2.5"/><path d="M196 88h22" stroke="#9BB8A6" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="184" cy="110" r="6" fill="#CFE9D6" class="ink" stroke-width="2.5"/><path d="M196 110h22" stroke="#9BB8A6" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="184" cy="132" r="6" fill="#CFE9D6" class="ink" stroke-width="2.5"/><path d="M196 132h16" stroke="#9BB8A6" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <circle cx="190" cy="150" r="9" fill="#CFE9D6" class="ink"/>
+  </g>
+  <g fill="#D6F24B" class="ink" stroke-width="2.5"><path d="M30 60 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 Z"/><path d="M212 36 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/></g>
+</svg>

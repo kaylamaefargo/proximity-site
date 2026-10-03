@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" role="img" aria-labelledby="t d">
+  <title id="t">An altitude gauge running from operator to leader</title>
+  <desc id="d">A dial with a needle between two zones, operator on the left and leader on the right. The client picks where the needle sits.</desc>
+  <style>
+    .ink{stroke:#061F16;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+    .lab{font:800 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;fill:#CFE9D6;text-anchor:middle}
+    .needle{transform-box:view-box;transform-origin:210px 214px;animation:aim 6s ease-in-out infinite}
+    @keyframes aim{0%,100%{transform:rotate(-38deg)}50%{transform:rotate(38deg)}}
+    @media (prefers-reduced-motion:reduce){.needle{animation:none;transform:rotate(-8deg)}}
+  </style>
+  <!-- dial body -->
+  <path d="M30 214 A180 180 0 0 1 390 214 Z" fill="#0F3D2C" class="ink"/>
+  <!-- zones -->
+  <path d="M48 214 A162 162 0 0 1 210 52" fill="none" stroke="#2E8F63" stroke-width="26"/>
+  <path d="M210 52 A162 162 0 0 1 372 214" fill="none" stroke="#D6F24B" stroke-width="26"/>
+  <!-- ticks -->
+  <g stroke="#061F16" stroke-width="3" stroke-linecap="round">
+    <path d="M210 36 V54"/><path d="M127 58 L136 74"/><path d="M293 58 L284 74"/><path d="M66 114 L82 122"/><path d="M354 114 L338 122"/>
+  </g>
+  <!-- cloud -->
+  <g fill="#CFE9D6" class="ink" stroke-width="2.5"><path d="M168 168 q0 -16 16 -16 q6 -14 22 -8 q16 -6 22 10 q14 0 14 14 H168 Z" transform="translate(0 -4)"/></g>
+  <!-- needle -->
+  <g class="needle"><path d="M206 214 L210 66 L214 214 Z" fill="#CFE9D6" class="ink"/></g>
+  <circle cx="210" cy="214" r="15" fill="#D6F24B" class="ink"/><circle cx="210" cy="214" r="4.5" fill="#061F16"/>
+  <!-- base plate and labels -->
+  <rect x="14" y="224" width="392" height="30" rx="6" fill="#061F16" stroke="#CFE9D6" stroke-width="2"/>
+  <text class="lab" x="92" y="244">OPERATOR</text><text class="lab" x="328" y="244">LEADER</text>
+  <text class="lab" x="210" y="244" style="fill:#D6F24B">YOUR CALL</text>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 92 580 318" role="img" aria-labelledby="t d">
+  <title id="t">A revenue pipeline with a leak at the discovery call</title>
+  <desc id="d">A pipe runs through five stages: ad, landing page, discovery call, proposal, and closed or lost. Lime-colored flow moves steadily through the first stages, then a crack at the discovery call drips and the flow thins out. A magnifying glass inspects the leak.</desc>
+  <style>
+    .ink{stroke:#061F16;stroke-width:3.5;stroke-linejoin:round;stroke-linecap:round}
+    .thin{stroke:#061F16;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+    .tag{font:800 11.5px/1 Arial,Helvetica,sans-serif;letter-spacing:.06em;fill:#061F16;text-anchor:middle}
+    .flow-a{stroke-dasharray:14 14;animation:flow 1.6s linear infinite}
+    .flow-b{stroke-dasharray:5 42;animation:flow 2.4s linear infinite}
+    .drip{animation:drip 2.4s ease-in infinite;transform-box:fill-box;transform-origin:center}
+    .d2{animation-delay:-.8s}.d3{animation-delay:-1.6s}
+    .ripple{transform-box:fill-box;transform-origin:center;animation:ripple 2.4s ease-out infinite}
+    .sway{transform-box:fill-box;transform-origin:30% 80%;animation:sway 3.6s ease-in-out infinite}
+    .glow{animation:glow 1.8s ease-in-out infinite}
+    @keyframes flow{to{stroke-dashoffset:-56}}
+    @keyframes drip{0%{transform:translateY(0);opacity:0}12%{opacity:1}85%{opacity:1}100%{transform:translateY(128px);opacity:0}}
+    @keyframes ripple{0%,60%{transform:scale(.6);opacity:0}70%{opacity:.9}100%{transform:scale(1.15);opacity:0}}
+    @keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+    @keyframes glow{0%,100%{opacity:1}50%{opacity:.35}}
+    @media (prefers-reduced-motion:reduce){.flow-a,.flow-b,.drip,.ripple,.sway,.glow{animation:none}.drip{opacity:1}}
+  </style>
+
+  <path d="M10 396 H630" stroke="#CFE9D6" stroke-width="3" stroke-dasharray="3 12" stroke-linecap="round" opacity=".5"/>
+
+  <!-- pipe -->
+  <rect x="30" y="152" width="580" height="36" rx="18" fill="#CFE9D6" class="ink"/>
+  <rect x="44" y="162" width="552" height="16" rx="8" fill="#0F3D2C"/>
+  <path d="M52 170 H304" class="flow-a" stroke="#D6F24B" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M344 170 H588" class="flow-b" stroke="#D6F24B" stroke-width="7" stroke-linecap="round" fill="none" opacity=".75"/>
+
+  <!-- the crack and the leak -->
+  <path d="M308 188 l8 8 -6 6 8 8" fill="none" stroke="#061F16" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#D6F24B" class="ink" stroke-width="2.5">
+    <g transform="translate(318 202) scale(1.6) translate(-318 -202)"><path class="drip" d="M318 204 q-7 12 0 17 q7 -5 0 -17 Z"/></g>
+    <g transform="translate(318 202) scale(1.6) translate(-318 -202)"><path class="drip d2" d="M318 204 q-7 12 0 17 q7 -5 0 -17 Z"/></g>
+    <g transform="translate(318 202) scale(1.6) translate(-318 -202)"><path class="drip d3" d="M318 204 q-7 12 0 17 q7 -5 0 -17 Z"/></g>
+  </g>
+  <ellipse cx="318" cy="354" rx="60" ry="12" fill="#D6F24B" class="ink"/>
+  <ellipse class="ripple" cx="318" cy="354" rx="50" ry="9" fill="none" stroke="#061F16" stroke-width="2.5"/>
+  <rect x="238" y="368" width="160" height="26" rx="4" fill="#D6F24B" class="ink" transform="rotate(-2 318 381)"/>
+  <text class="tag" x="318" y="385.5" transform="rotate(-2 318 381)">LEAK FOUND HERE</text>
+
+  <!-- stations: label tag, stem, node with a tiny icon -->
+  <g>
+    <!-- 1 AD -->
+    <path d="M86 128 V144" class="thin" fill="none"/><rect x="62" y="104" width="48" height="24" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" x="86" y="120">AD</text>
+    <circle cx="86" cy="170" r="28" fill="#2E8F63" class="ink"/>
+    <path d="M74 166 v8 h6 l10 6 v-20 l-10 6 Z" fill="#CFE9D6" class="thin"/><path d="M96 164 q5 6 0 12" fill="none" stroke="#CFE9D6" stroke-width="3" stroke-linecap="round"/>
+    <!-- 2 LANDING PAGE -->
+    <path d="M202 128 V144" class="thin" fill="none"/><rect x="148" y="104" width="108" height="24" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" x="202" y="120">LANDING PAGE</text>
+    <circle cx="202" cy="170" r="28" fill="#2E8F63" class="ink"/>
+    <rect x="188" y="158" width="28" height="22" rx="3" fill="#CFE9D6" class="thin"/><path d="M188 165 H216" stroke="#061F16" stroke-width="2.5"/><circle cx="192" cy="161.5" r="1.4" fill="#061F16"/>
+    <!-- 3 DISCOVERY CALL (the leak) -->
+    <path d="M318 128 V142" class="thin" fill="none"/><rect x="255" y="104" width="126" height="24" rx="4" fill="#D6F24B" class="ink"/><text class="tag" x="318" y="120">DISCOVERY CALL</text>
+    <circle cx="318" cy="170" r="28" fill="#D6F24B" class="ink"/>
+    <circle cx="318" cy="170" r="38" fill="none" stroke="#D6F24B" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round" class="glow"/>
+    <path d="M308 160 q-3 14 8 22 l5 -5 -4 -5 5 -4 -5 -5 Z" fill="#061F16" class="thin"/>
+    <!-- 4 PROPOSAL -->
+    <path d="M434 128 V144" class="thin" fill="none"/><rect x="389" y="104" width="90" height="24" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" x="434" y="120">PROPOSAL</text>
+    <circle cx="434" cy="170" r="28" fill="#2E8F63" class="ink"/>
+    <path d="M424 158 h14 l6 6 v16 h-20 Z" fill="#CFE9D6" class="thin"/><path d="M428 168 h12 M428 174 h12" stroke="#061F16" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- 5 CLOSED / LOST -->
+    <path d="M550 128 V144" class="thin" fill="none"/><rect x="494" y="104" width="112" height="24" rx="4" fill="#CFE9D6" class="ink"/><text class="tag" x="550" y="120">CLOSED / LOST</text>
+    <circle cx="550" cy="170" r="28" fill="#2E8F63" class="ink"/>
+    <path d="M540 180 V158 l18 5 -18 6" fill="#CFE9D6" class="thin"/>
+  </g>
+
+  <!-- magnifying glass over the leak -->
+  <g class="sway">
+    <circle cx="404" cy="290" r="44" fill="rgba(207,233,214,.16)" class="ink" stroke-width="5"/>
+    <path d="M436 322 L474 360" class="ink" stroke-width="12" fill="none"/>
+    <path d="M436 322 L474 360" stroke="#D6F24B" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M384 276 q10 -14 26 -12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  </g>
+
+  <g fill="#D6F24B" class="thin"><path d="M70 60 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5 Z"/><path d="M560 56 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 Z"/></g>
+</svg>
