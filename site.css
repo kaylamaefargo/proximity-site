@@ -442,3 +442,11 @@ section[id]{scroll-margin-top:96px}
 .path.days .path-step::before{content:attr(data-label);width:auto;height:40px;padding:0 16px;border-radius:999px;font-family:var(--sans);font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transform:rotate(-3deg)}
 .receipt table{min-width:880px}
 .plan .p-price small{line-height:1.45}
+
+/* testimonial: the quoted words are set apart from the page's own voice */
+.testimonial blockquote{border-left:6px solid var(--lime);padding-left:clamp(16px,2.4vw,28px);margin:0}
+.testimonial blockquote p{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:1.14rem;line-height:1.6;color:var(--g-800);max-width:60ch}
+.testimonial blockquote p::before{content:"\201C";color:var(--g-500);font-weight:700}
+.testimonial blockquote p:last-child::after{content:"\201D";color:var(--g-500);font-weight:700}
+.testimonial blockquote .pull{font-family:var(--display);font-style:normal;font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.2;color:var(--dark-ink);max-width:26ch;margin-bottom:20px}
+.testimonial .q-mark{display:none}
