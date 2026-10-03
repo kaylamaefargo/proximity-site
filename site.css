@@ -466,3 +466,10 @@ section[id]{scroll-margin-top:96px}
 .side-list{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
 .side-list li{position:relative;padding-left:28px;color:var(--text);font-size:.98rem;line-height:1.45}
 .side-list li::before{content:"";position:absolute;left:2px;top:.42em;width:13px;height:7px;border-left:3px solid var(--lime);border-bottom:3px solid var(--lime);transform:rotate(-45deg)}
+
+/* philosophy block: one text column with the art beside it; no big row gaps between the headline and paragraphs */
+.philosophy{row-gap:0;column-gap:clamp(24px,5vw,64px)}
+.philosophy h2{margin-bottom:22px}
+.philosophy p + p{margin-top:1em}
+.philosophy .phil-art{align-self:center}
+.philosophy .phil-art img{width:100%;height:auto;display:block}
