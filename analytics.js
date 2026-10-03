@@ -2,7 +2,7 @@
    Setup: replace GA_ID below with the Measurement ID from GA4 (Admin > Data streams > your web stream),
    which looks like G-ABC123XYZ. Until then this file does nothing, so the site is safe to publish. */
 (function () {
-  var GA_ID = 'G-XXXXXXXXXX';
+  var GA_ID = 'G-0N023KZYET';
   if (!GA_ID || /^G-X+$/.test(GA_ID)) return;
 
   window.dataLayer = window.dataLayer || [];
