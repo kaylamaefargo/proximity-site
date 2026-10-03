@@ -419,3 +419,12 @@ html,body{overflow-x:clip}
 .cta-band h2,.philosophy h2,.section-head h2{line-height:1.16}
 .hero h1{line-height:1.2}
 .mark{text-underline-offset:.2em}
+
+/* range cards: one calm lift. The card and its shadow move together, and a slightly larger hover zone
+   keeps the card from sliding out from under the cursor. */
+.range-card{position:relative}
+.range-card::after{content:"";position:absolute;inset:-8px 0;pointer-events:auto}
+@media (hover:hover){
+  .range-card:hover{transform:rotate(var(--rot,0deg)) translateY(-4px);box-shadow:7px 7px 0 var(--lime)}
+}
+@media (hover:none){.range-card:hover{transform:rotate(var(--rot,0deg))}}
