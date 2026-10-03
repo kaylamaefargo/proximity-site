@@ -506,3 +506,5 @@ section[id]{scroll-margin-top:96px}
 .report-disclaimer strong{color:var(--dark-ink)}
 .report-stamp{top:46px}
 .finding.first .report-stamp{position:absolute;top:-17px;right:-14px;z-index:2}
+.cta-fine{margin-top:20px;font-size:.92rem;font-weight:500;color:var(--g-800);max-width:62ch}
+.cta-fine a{color:var(--dark-ink);font-weight:700;text-underline-offset:3px}
