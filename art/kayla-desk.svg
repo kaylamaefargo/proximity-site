@@ -67,13 +67,13 @@
   </g>
 
   <!-- Kayla : hair behind -->
-  <path d="M208 214 C194 118 250 84 296 84 C348 84 394 122 380 218 L402 430 L186 430 Z" fill="#A95A33" class="ink"/>
-  <path d="M232 120 C250 100 276 94 298 94" fill="none" stroke="#C47A4A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M214 204 C206 118 256 84 298 84 C346 84 380 118 370 206 L380 392 L204 392 Z" fill="#8C6A48" class="ink"/>
   <!-- neck -->
-  <path d="M270 266 H312 V318 H270 Z" fill="#E8C6A8" class="ink"/>
+  <path d="M270 262 H312 V322 H270 Z" fill="#E8C6A8" class="ink"/>
   <!-- sweater / torso -->
   <path d="M138 470 C138 372 196 322 291 316 C386 322 444 372 444 470 Z" fill="#1B5E43" class="ink"/>
-  <path d="M262 318 C270 342 312 342 320 318" fill="#E8C6A8" class="ink"/>
+  <path d="M258 318 Q291 344 326 318" fill="none" stroke="#061F16" stroke-width="12" stroke-linecap="round"/>
+  <path d="M258 318 Q291 344 326 318" fill="none" stroke="#0F3D2C" stroke-width="6" stroke-linecap="round"/>
   <path d="M170 440 C180 400 200 372 226 352" fill="none" stroke="#2E8F63" stroke-width="5" stroke-linecap="round" opacity=".7"/>
   <!-- arms -->
   <path d="M206 366 C170 400 166 440 220 482" fill="none" stroke="#061F16" stroke-width="44" stroke-linecap="round"/>
@@ -81,24 +81,43 @@
   <path d="M380 366 C420 402 424 446 372 486" fill="none" stroke="#061F16" stroke-width="44" stroke-linecap="round"/>
   <path d="M380 366 C420 402 424 446 372 486" fill="none" stroke="#2E8F63" stroke-width="37" stroke-linecap="round"/>
   <!-- face -->
-  <ellipse cx="291" cy="200" rx="63" ry="76" fill="#F4D9C2" class="ink"/>
-  <!-- hair fringe + front curtains -->
-  <path d="M226 196 C222 126 262 104 294 104 C336 104 364 136 358 196 C342 160 316 146 290 148 C262 150 240 166 226 196 Z" fill="#A95A33" class="ink"/>
-  <path d="M226 190 C214 250 208 330 192 428 Q198 448 218 442 Q238 438 240 422 C244 350 246 270 246 206 Z" fill="#A95A33" class="ink"/>
-  <path d="M358 190 C370 250 376 330 392 428 Q386 448 366 442 Q346 438 344 422 C340 350 338 270 336 206 Z" fill="#A95A33" class="ink"/>
-  <!-- glasses -->
-  <g fill="rgba(255,255,255,.28)" stroke="#3B2417" stroke-width="4.5" stroke-linejoin="round">
-    <rect x="248" y="184" width="36" height="30" rx="12"/><rect x="299" y="184" width="36" height="30" rx="12"/>
+  <ellipse cx="291" cy="202" rx="64" ry="76" fill="#F6DCCB" class="ink"/>
+  <!-- hair falls in front of the shoulders, tucked behind the ears -->
+  <path d="M228 200 C214 236 208 280 208 330 C208 362 212 386 220 404 C230 410 242 402 250 388 C252 356 256 320 254 288 C252 252 242 226 236 206 Z" fill="#B08A62" class="ink"/>
+  <path d="M354 200 C368 236 374 280 374 330 C374 362 370 386 362 404 C352 410 340 402 332 388 C330 356 326 320 328 288 C330 252 340 226 346 206 Z" fill="#B08A62" class="ink"/>
+  <g fill="none" stroke="#D4B48A" stroke-width="4.5" stroke-linecap="round">
+    <path d="M222 262 C216 300 216 340 222 388"/><path d="M240 304 C238 342 240 366 244 388"/>
+    <path d="M360 262 C366 300 366 340 360 388"/><path d="M342 304 C344 342 342 366 338 388"/>
   </g>
-  <path d="M284 196 H299" stroke="#3B2417" stroke-width="4.5" stroke-linecap="round"/>
-  <path d="M248 194 L238 190 M335 194 L345 190" stroke="#3B2417" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="266" cy="199" r="3.6" fill="#061F16"/><circle cx="317" cy="199" r="3.6" fill="#061F16"/>
-  <path d="M252 177 Q266 171 280 176 M303 176 Q317 171 331 177" fill="none" stroke="#7B3F22" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- ears + studs -->
+  <ellipse cx="229" cy="212" rx="8" ry="12" fill="#F6DCCB" class="thin"/><circle cx="229" cy="225" r="3.2" fill="#CFE9D6" class="thin"/>
+  <ellipse cx="353" cy="212" rx="8" ry="12" fill="#F6DCCB" class="thin"/><circle cx="353" cy="225" r="3.2" fill="#CFE9D6" class="thin"/>
+  <!-- side-swept hair on top, parted left of center -->
+  <path d="M230 202 C212 112 262 78 300 80 C350 82 384 118 358 204 C352 170 340 148 318 136 C300 128 282 120 268 106 C262 140 248 172 230 202 Z" fill="#B08A62" class="ink"/>
+  <g fill="none" stroke="#D4B48A" stroke-width="4.5" stroke-linecap="round">
+    <path d="M250 124 C262 100 286 92 306 94"/><path d="M322 108 C346 118 362 142 360 172"/><path d="M276 118 C298 134 320 140 336 158"/>
+  </g>
+  <path d="M268 106 C270 116 274 122 280 126" fill="none" stroke="#8C6A48" stroke-width="3" stroke-linecap="round"/>
+  <!-- brows -->
+  <path d="M250 178 Q266 170 281 176 M302 176 Q317 170 333 178" fill="none" stroke="#8C6A48" stroke-width="4" stroke-linecap="round"/>
+  <!-- eyes: green -->
+  <g>
+    <ellipse cx="266" cy="199" rx="7.5" ry="6" fill="#fff"/><circle cx="266" cy="199" r="4.6" fill="#2E8F63"/><circle cx="266" cy="199" r="2.2" fill="#061F16"/><circle cx="267.6" cy="197.4" r="1.1" fill="#fff"/>
+    <ellipse cx="318" cy="199" rx="7.5" ry="6" fill="#fff"/><circle cx="318" cy="199" r="4.6" fill="#2E8F63"/><circle cx="318" cy="199" r="2.2" fill="#061F16"/><circle cx="319.6" cy="197.4" r="1.1" fill="#fff"/>
+  </g>
+  <!-- glasses: square tortoiseshell -->
+  <g fill="rgba(255,255,255,.22)" stroke="#6F5A73" stroke-width="4.5" stroke-linejoin="round">
+    <rect x="244" y="183" width="44" height="33" rx="9"/><rect x="296" y="183" width="44" height="33" rx="9"/>
+  </g>
+  <path d="M288 195 Q292 191 296 195" fill="none" stroke="#6F5A73" stroke-width="4" stroke-linecap="round"/>
+  <path d="M244 192 L231 192 M340 192 L353 192" stroke="#6F5A73" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#B79BC0"><circle cx="252" cy="186" r="1.8"/><circle cx="270" cy="213" r="1.8"/><circle cx="282" cy="187" r="1.6"/><circle cx="305" cy="186" r="1.8"/><circle cx="322" cy="213" r="1.8"/><circle cx="334" cy="188" r="1.6"/></g>
+  <!-- nose + stud -->
+  <path d="M291 206 q-5 12 -1 18 q5 3 9 -1" fill="none" stroke="#C99572" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="284" cy="226" r="2.6" fill="#CFE9D6" class="thin" stroke-width="1.5"/>
   <!-- smile -->
-  <path d="M264 234 Q291 262 320 234 Q291 244 264 234 Z" fill="#fff" class="thin"/>
-  <path d="M274 226 q4 2 8 0" fill="none" stroke="none"/>
-  <path d="M291 214 q-4 8 0 10" fill="none" stroke="#C99572" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="254" cy="228" r="9" fill="#EFA990" opacity=".45"/><circle cx="329" cy="228" r="9" fill="#EFA990" opacity=".45"/>
+  <path d="M262 238 Q291 268 322 238 Q291 247 262 238 Z" fill="#fff" class="thin"/>
+  <circle cx="251" cy="230" r="10" fill="#EFA990" opacity=".45"/><circle cx="332" cy="230" r="10" fill="#EFA990" opacity=".45"/>
 
   <!-- desk -->
   <path d="M-10 456 H610 V610 H-10 Z" fill="#2E8F63" class="ink"/>
