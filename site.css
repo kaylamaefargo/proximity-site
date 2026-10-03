@@ -106,7 +106,7 @@ section{padding-block:clamp(40px,6.5vw,76px)}
 
 /* ---------- marquee ---------- */
 .marquee{background:var(--lime);color:var(--dark-ink);border-block:3px solid var(--g-950);overflow:hidden;white-space:nowrap;padding:12px 0;transform:rotate(-1deg);margin:clamp(24px,4vw,40px) -2vw}
-.marquee-track{display:inline-flex;gap:0;animation:ticker 38s linear infinite;will-change:transform}
+.marquee-track{display:inline-flex;gap:0;animation:ticker 46s linear infinite;will-change:transform}
 .marquee span{font-family:var(--display);font-size:clamp(1.1rem,2.2vw,1.6rem);letter-spacing:.04em;text-transform:uppercase;padding-inline:18px;display:inline-flex;align-items:center;gap:36px}
 .marquee span::after{content:"";width:14px;height:14px;background:var(--g-950);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
 @keyframes ticker{to{transform:translateX(-50%)}}
