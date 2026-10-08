@@ -25,7 +25,7 @@
 <style>
   .wl-form{display:grid;gap:34px;margin-top:8px}
   .wl-q{border:0;margin:0;padding:0;min-width:0}
-  .wl-q[hidden],.wl-step[hidden],.wl-set[hidden]{display:none}
+  .wl-q[hidden]{display:none}
   .wl-q legend{padding:0;margin:0 0 6px;font-family:var(--display);font-size:1.35rem;line-height:1.2;color:var(--text);text-wrap:balance}
   .wl-q .hint{font-size:.96rem;color:var(--muted);margin:0 0 14px;max-width:60ch}
   .wl-q .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin-right:10px;border-radius:50%;border:2.5px solid var(--g-950);background:var(--lime);color:var(--dark-ink);font-size:1rem;transform:rotate(-5deg);vertical-align:2px}
@@ -83,42 +83,38 @@
 <section class="wrap" id="form-section">
   <form class="wl-form" id="wl-form" novalidate>
 
-    <!-- Question 1: area, then the specific job -->
+    <!-- Question 1: every job visible, grouped by area, pick as many as apply -->
     <fieldset class="wl-q" id="q-agent">
       <legend><span class="num">1</span>What would you want an agent to take off your plate?</legend>
       <p class="hint">An agent is a set of instructions, plus the context it needs, that does one recurring job the same way every time. Pick every job you'd hand off. Choose as many as apply.</p>
 
-      <p class="wl-sub">Start with the areas that apply</p>
+      <p class="wl-sub">Content and PR</p>
       <div class="wl-options">
-        <label class="wl-opt"><input type="checkbox" name="agent_area" value="Content and PR"><span class="card"><b>Content and PR</b></span></label>
-        <label class="wl-opt"><input type="checkbox" name="agent_area" value="Sales and events"><span class="card"><b>Sales and events</b></span></label>
-        <label class="wl-opt"><input type="checkbox" name="agent_area" value="Customer and market insight"><span class="card"><b>Customer and market insight</b></span></label>
-        <label class="wl-opt"><input type="checkbox" name="agent_area" value="Something else"><span class="card"><b>Something else</b></span></label>
-        <label class="wl-opt"><input type="checkbox" name="agent_area" value="Not sure yet"><span class="card"><b>Not sure yet</b></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Content and PR" value="PR and media pitches"><span class="card"><b>PR and media pitches</b><span>Drafts pitches, press releases and follow-ups to your target outlets, in your voice.</span></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Content and PR" value="LinkedIn and thought leadership"><span class="card"><b>LinkedIn and thought leadership</b><span>Turns rough notes and ideas into timely, relevant posts that sound like you wrote them.</span></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Content and PR" value="Content repurposing"><span class="card"><b>Content repurposing</b><span>Turns one piece of content into the formats you publish in.</span></span></label>
       </div>
 
-      <div class="wl-step" id="step-agent" hidden>
-        <p class="wl-sub">Then the jobs</p>
+      <p class="wl-sub">Sales and events</p>
+      <div class="wl-options">
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Sales and events" value="Weekly sales or pipeline updates"><span class="card"><b>Weekly sales or pipeline updates</b><span>Pulls the week's activity into a short update a leader can read in two minutes.</span></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Sales and events" value="Post-call follow-up"><span class="card"><b>Post-call follow-up</b><span>Reads a call transcript and picks the assets that answer what the prospect actually raised.</span></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Sales and events" value="Call recaps and CRM notes"><span class="card"><b>Call recaps and CRM notes</b><span>Turns a call into a clean recap and the notes your CRM needs.</span></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Sales and events" value="Account and prospect research"><span class="card"><b>Account and prospect research</b><span>Pulls together what you need to know before you reach out.</span></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Sales and events" value="Event follow-up"><span class="card"><b>Event follow-up</b><span>Drafts timely follow-up for the people you met or invited.</span></span></label>
+      </div>
 
-        <div class="wl-options wl-set" data-area="Content and PR" hidden>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="PR and media pitches"><span class="card"><b>PR and media pitches</b><span>Drafts pitches, press releases and follow-ups to your target outlets, in your voice.</span></span></label>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="LinkedIn and thought leadership"><span class="card"><b>LinkedIn and thought leadership</b><span>Turns rough notes and ideas into timely, relevant posts that sound like you wrote them.</span></span></label>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Content repurposing"><span class="card"><b>Content repurposing</b><span>Turns one piece of content into the formats you publish in.</span></span></label>
-        </div>
+      <p class="wl-sub">Customer and market insight</p>
+      <div class="wl-options">
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Customer and market insight" value="Customer interview summaries"><span class="card"><b>Customer interview summaries</b><span>Turns a transcript into a one-page summary of themes, quotes and next steps.</span></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Customer and market insight" value="Win and loss interview analysis"><span class="card"><b>Win and loss interview analysis</b><span>Finds the patterns in why you win and lose deals.</span></span></label>
+          <label class="wl-opt"><input type="checkbox" name="agent" data-area="Customer and market insight" value="Competitor monitoring"><span class="card"><b>Competitor monitoring</b><span>Watches what competitors change and flags what matters to you.</span></span></label>
+      </div>
 
-        <div class="wl-options wl-set" data-area="Sales and events" hidden>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Weekly sales or pipeline updates"><span class="card"><b>Weekly sales or pipeline updates</b><span>Pulls the week's activity into a short update a leader can read in two minutes.</span></span></label>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Post-call follow-up"><span class="card"><b>Post-call follow-up</b><span>Reads a call transcript and picks the assets that answer what the prospect actually raised.</span></span></label>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Call recaps and CRM notes"><span class="card"><b>Call recaps and CRM notes</b><span>Turns a call into a clean recap and the notes your CRM needs.</span></span></label>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Account and prospect research"><span class="card"><b>Account and prospect research</b><span>Pulls together what you need to know before you reach out.</span></span></label>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Event follow-up"><span class="card"><b>Event follow-up</b><span>Drafts timely follow-up for the people you met or invited.</span></span></label>
-        </div>
-
-        <div class="wl-options wl-set" data-area="Customer and market insight" hidden>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Customer interview summaries"><span class="card"><b>Customer interview summaries</b><span>Turns a transcript into a one-page summary of themes, quotes and next steps.</span></span></label>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Win and loss interview analysis"><span class="card"><b>Win and loss interview analysis</b><span>Finds the patterns in why you win and lose deals.</span></span></label>
-          <label class="wl-opt"><input type="checkbox" name="agent" value="Competitor monitoring"><span class="card"><b>Competitor monitoring</b><span>Watches what competitors change and flags what matters to you.</span></span></label>
-        </div>
+      <p class="wl-sub">Something different</p>
+      <div class="wl-options">
+        <label class="wl-opt"><input type="checkbox" name="agent" data-area="Something else" value="Something else"><span class="card"><b>Something else</b><span>Tell me what you'd want an agent to do.</span></span></label>
+        <label class="wl-opt"><input type="checkbox" name="agent" data-area="Not sure yet" value="Not sure yet"><span class="card"><b>Not sure yet</b></span></label>
       </div>
 
       <div class="wl-other wl-field" id="other-wrap">
@@ -193,11 +189,9 @@
   // Kit form "Work with Kayla" (form ID 10019914). Fields below must exist on the form in Kit.
   // Multi-select answers are joined with "; " into the single text field.
   var KIT_URL = 'https://app.kit.com/forms/10019914/subscriptions';
-  var JOB_AREAS = ['Content and PR', 'Sales and events', 'Customer and market insight'];
   var COMPANY_ROLES = ['Marketing or sales at a company', 'Leading a marketing or sales team'];
 
   var form = document.getElementById('wl-form');
-  var stepAgent = document.getElementById('step-agent');
   var otherWrap = document.getElementById('other-wrap');
   var qPath = document.getElementById('q-path');
   var qRole = document.getElementById('q-role');
@@ -207,49 +201,39 @@
   var errBox = document.getElementById('wl-error');
   var btn = document.getElementById('wl-btn');
 
-  function all(name) {
-    return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function (el) { return el.value; });
-  }
+  function checkedEls(name) { return Array.prototype.slice.call(form.querySelectorAll('input[name="' + name + '"]:checked')); }
+  function all(name) { return checkedEls(name).map(function (el) { return el.value; }); }
   function one(name) { var v = all(name); return v.length ? v[0] : ''; }
   function showError(msg) { errBox.textContent = msg; errBox.classList.add('show'); }
   function clearError() { errBox.textContent = ''; errBox.classList.remove('show'); }
 
-  // "Not sure yet" stands alone: it clears the other areas and jobs, and picking another area clears it.
+  // "Not sure yet" stands alone: it clears every other job, and picking any other job clears it.
   function enforceNotSure(changed) {
-    var notSure = form.querySelector('input[name="agent_area"][value="Not sure yet"]');
-    if (changed && changed.name === 'agent_area') {
-      if (changed.value === 'Not sure yet' && changed.checked) {
-        form.querySelectorAll('input[name="agent_area"]').forEach(function (i) { if (i !== notSure) i.checked = false; });
-      } else if (changed.checked && notSure.checked) {
-        notSure.checked = false;
-      }
+    if (!changed || changed.name !== 'agent') return;
+    var notSure = form.querySelector('input[name="agent"][value="Not sure yet"]');
+    if (changed.value === 'Not sure yet' && changed.checked) {
+      form.querySelectorAll('input[name="agent"]').forEach(function (i) { if (i !== notSure) i.checked = false; });
+    } else if (changed.checked && notSure.checked) {
+      notSure.checked = false;
     }
   }
 
   function agentSummary() {
-    var areas = all('agent_area');
-    var jobs = all('agent');
-    var elseChosen = areas.indexOf('Something else') !== -1;
-    var notSure = areas.indexOf('Not sure yet') !== -1;
-    var agents = jobs.slice();
-    if (elseChosen) agents.push('Something else');
-    if (notSure) agents.push('Not sure yet');
-    return { areas: areas, agents: agents, elseChosen: elseChosen };
+    var els = checkedEls('agent');
+    var areas = [];
+    els.forEach(function (el) {
+      var a = el.getAttribute('data-area');
+      if (areas.indexOf(a) === -1) areas.push(a);
+    });
+    var elseChosen = els.some(function (el) { return el.value === 'Something else'; });
+    return { areas: areas, agents: els.map(function (el) { return el.value; }), elseChosen: elseChosen };
   }
 
   function refresh() {
-    var areas = all('agent_area');
-    var anyJobArea = JOB_AREAS.some(function (a) { return areas.indexOf(a) !== -1; });
+    var summary = agentSummary();
+    otherWrap.classList.toggle('show', summary.elseChosen);
 
-    stepAgent.hidden = !anyJobArea;
-    document.querySelectorAll('.wl-set').forEach(function (set) {
-      var match = areas.indexOf(set.getAttribute('data-area')) !== -1;
-      set.hidden = !match;
-      if (!match) set.querySelectorAll('input').forEach(function (i) { i.checked = false; });
-    });
-    otherWrap.classList.toggle('show', areas.indexOf('Something else') !== -1);
-
-    var q1Done = agentSummary().agents.length > 0;
+    var q1Done = summary.agents.length > 0;
     qPath.hidden = !q1Done;
 
     var q2Done = q1Done && all('path').length > 0;
@@ -266,9 +250,25 @@
     submitWrap.hidden = !ready;
   }
 
+  // When the next single-choice question appears, bring it into view so the form never looks stuck.
+  // Only for single-choice reveals; multi-select questions must not scroll while someone is still picking.
+  var lastShown = { payer: false, contact: false };
+  function revealNudge() {
+    var states = { payer: !qPayer.hidden, contact: !contact.hidden };
+    var targets = { payer: qPayer, contact: contact };
+    Object.keys(states).forEach(function (k) {
+      if (states[k] && !lastShown[k]) {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        targets[k].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      }
+      lastShown[k] = states[k];
+    });
+  }
+
   form.addEventListener('change', function (e) {
     enforceNotSure(e.target);
     refresh();
+    revealNudge();
     clearError();
   });
 
@@ -281,7 +281,7 @@
     var payer = COMPANY_ROLES.indexOf(role) !== -1 ? one('payer') : '';
     var other = form.agent_other.value.trim();
     var email = form.email_address.value.trim();
-    if (!summary.agents.length) return showError('Pick at least one area and job to continue.');
+    if (!summary.agents.length) return showError('Pick at least one job to continue.');
     if (summary.elseChosen && !other) return showError('Tell me in a sentence what it would do.');
     if (!paths.length) return showError('Pick at least one way you would like to receive this.');
     if (!role) return showError('Pick what best describes you.');
