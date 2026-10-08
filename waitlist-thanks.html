@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanks for Telling Me | Proximity</title>
+<meta name="description" content="Thanks for telling me what you want an agent to do. Here's what happens next.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://byproximity.com/waitlist-thanks.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://byproximity.com/waitlist-thanks.html">
+<meta property="og:title" content="Thanks for Telling Me | Proximity">
+<meta property="og:description" content="Thanks for telling me what you want an agent to do. Here's what happens next.">
+<meta property="og:image" content="https://byproximity.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://byproximity.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+<style>
+  .thanks-card{background:var(--paper);color:var(--dark-ink);border:3px solid var(--g-950);border-radius:14px;box-shadow:7px 7px 0 var(--lime);padding:30px 26px}
+  .thanks-card p{color:var(--dark-muted);font-size:1.02rem}
+  .thanks-card p + p{margin-top:.9em}
+  .thanks-card strong{color:var(--dark-ink)}
+  .thanks-card .btn{margin-top:22px}
+  .thanks-card .small{margin-top:14px;font-size:.86rem}
+  .thanks-card .small a{color:var(--g-700);font-weight:700}
+  .thanks-confirm{background:var(--g-950);border:3px dashed var(--lime);border-radius:12px;padding:16px 20px;margin-bottom:24px;color:var(--text);font-size:.98rem}
+  .thanks-confirm strong{color:var(--lime)}
+</style>
+<script src="analytics.js" defer></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html"><svg class="logo-mark" width="34" height="34" viewBox="-70 -70 140 140" aria-hidden="true"><path d="M0 -62 A62 62 0 0 0 0 62 Z" transform="translate(-8 0)" fill="#D6F24B" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -62 A62 62 0 0 1 0 62 Z" transform="translate(8 0)" fill="#CFE9D6" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#D6F24B" stroke="#061F16" stroke-width="6" stroke-linejoin="round"/></svg><span>Proximity</span></a>
+  </div>
+</header>
+
+<header class="hero wrap">
+  <span class="pill">Work with Kayla</span>
+  <h1>Thanks. I'm going through <span class="mark">the responses.</span></h1>
+</header>
+
+<section class="wrap" style="padding-top:0">
+  <div class="thanks-confirm">
+    <strong>One quick thing.</strong> I just sent you an email. Click the confirmation link inside so I can reach you (check spam or promotions if you don't see it). If you've already confirmed, you're all set.
+  </div>
+
+  <div class="thanks-card">
+    <p>I'm sorting through everyone's interest now and deciding what to offer next, so I can build the right things in the right order. You'll hear from me when there's something that fits what you told me.</p>
+    <p>If the PR agent is what you're after, you don't have to wait. I'm building it for a small number of people as a pilot: I set up the PR agent for you, in your own tools. I'm only opening this to a handful, and once those spots are gone, they're gone.</p>
+    <a class="btn btn-primary" href="https://book.stripe.com/bJe00jbFhdva5LoaNvfrW02" id="pilot-btn">Book a PR agent pilot</a>
+    <p class="small">Pilot terms are <a href="terms.html#pr-agent-pilot">here</a>.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">Proximity &middot; Kayla Fargo &middot; <a href="terms.html">Terms</a></div>
+</footer>
+
+<script>
+  var pilot = document.getElementById('pilot-btn');
+  if (pilot) pilot.addEventListener('click', function () { if (window.gtag) window.gtag('event', 'pilot_click'); });
+</script>
+
+</body>
+</html>

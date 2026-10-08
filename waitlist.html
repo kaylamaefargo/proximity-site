@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tell Me What You Want an Agent to Do | Proximity</title>
+<meta name="description" content="A few questions to help me understand what you want an AI agent to do and how you'd like to get it. About a minute.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://byproximity.com/waitlist.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://byproximity.com/waitlist.html">
+<meta property="og:title" content="Tell Me What You Want an Agent to Do | Proximity">
+<meta property="og:description" content="A few questions to help me understand what you want an AI agent to do and how you'd like to get it.">
+<meta property="og:image" content="https://byproximity.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tell Me What You Want an Agent to Do | Proximity">
+<meta name="twitter:description" content="A few questions to help me understand what you want an AI agent to do and how you'd like to get it.">
+<meta name="twitter:image" content="https://byproximity.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+<style>
+  .wl-form{display:grid;gap:34px;margin-top:8px}
+  .wl-q{border:0;margin:0;padding:0;min-width:0}
+  .wl-q[hidden],.wl-step[hidden],.wl-set[hidden]{display:none}
+  .wl-q legend{padding:0;margin:0 0 6px;font-family:var(--display);font-size:1.35rem;line-height:1.2;color:var(--text);text-wrap:balance}
+  .wl-q .hint{font-size:.96rem;color:var(--muted);margin:0 0 14px;max-width:60ch}
+  .wl-q .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin-right:10px;border-radius:50%;border:2.5px solid var(--g-950);background:var(--lime);color:var(--dark-ink);font-size:1rem;transform:rotate(-5deg);vertical-align:2px}
+  .wl-sub{font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin:22px 0 10px}
+  .wl-options{display:grid;gap:12px}
+  .wl-opt{position:relative;display:block}
+  .wl-opt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+  .wl-opt .card{display:block;background:var(--g-800);border:2.5px solid var(--g-700);border-radius:14px;padding:16px 18px 16px 52px;position:relative;transition:border-color .2s var(--ease),background .2s var(--ease)}
+  .wl-opt .card::before{content:"";position:absolute;left:18px;top:19px;width:20px;height:20px;border-radius:50%;border:2.5px solid var(--mint);background:transparent;transition:background .2s var(--ease),border-color .2s var(--ease)}
+  .wl-opt .card b{display:block;font-weight:800;color:var(--text);font-size:1.02rem;line-height:1.3}
+  .wl-opt .card span{display:block;margin-top:3px;font-size:.92rem;color:var(--muted);line-height:1.45}
+  .wl-opt input:hover + .card{border-color:var(--mint)}
+  .wl-opt input:checked + .card{background:var(--g-950);border-color:var(--lime)}
+  .wl-opt input:checked + .card::before{background:var(--lime);border-color:var(--lime);box-shadow:inset 0 0 0 4px var(--g-950)}
+  .wl-opt input:focus-visible + .card{outline:3px solid var(--lime);outline-offset:3px}
+  .wl-other{display:none;margin-top:14px}
+  .wl-other.show{display:block}
+  .wl-field label{display:block;font-weight:800;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:8px}
+  .wl-field input[type="text"],.wl-field input[type="email"]{width:100%;font:inherit;font-size:1rem;color:var(--dark-ink);background:var(--paper);border:3px solid var(--g-950);border-radius:12px;padding:13px 16px;box-shadow:4px 4px 0 var(--lime)}
+  .wl-field input:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  .wl-field .opt{font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted)}
+  .wl-contact{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+  @media (max-width:560px){.wl-contact{grid-template-columns:1fr}}
+  .wl-check{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;color:var(--muted);line-height:1.5;cursor:pointer}
+  .wl-check input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--lime);flex-shrink:0}
+  .wl-submit{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .wl-submit .btn[disabled]{opacity:.6;cursor:wait}
+  .wl-error{display:none;background:var(--g-950);border:3px dashed var(--lime);border-radius:12px;padding:14px 18px;color:var(--text);font-size:.96rem}
+  .wl-error.show{display:block}
+  .wl-privacy{font-size:.84rem;color:var(--muted);line-height:1.55;max-width:60ch}
+  .wl-privacy a{color:var(--lime);font-weight:700}
+</style>
+<script src="analytics.js" defer></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html"><svg class="logo-mark" width="34" height="34" viewBox="-70 -70 140 140" aria-hidden="true"><path d="M0 -62 A62 62 0 0 0 0 62 Z" transform="translate(-8 0)" fill="#D6F24B" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -62 A62 62 0 0 1 0 62 Z" transform="translate(8 0)" fill="#CFE9D6" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#D6F24B" stroke="#061F16" stroke-width="6" stroke-linejoin="round"/></svg><span>Proximity</span></a>
+  </div>
+</header>
+
+<header class="hero wrap">
+  <span class="pill">Work with Kayla</span>
+  <h1>Tell me what you want an agent <span class="mark">to do.</span></h1>
+  <p class="lede">Most people I talk to know AI could save them hours, but not which agent to build first or how to get it working. A few questions help me understand what you're trying to do and what kind of help would be useful. It takes about a minute.</p>
+</header>
+
+<div class="wrap"><div class="zine-rule"><span class="glyph"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg></span></div></div>
+
+<section class="wrap" id="form-section">
+  <form class="wl-form" id="wl-form" novalidate>
+
+    <!-- Question 1: area, then the specific job -->
+    <fieldset class="wl-q" id="q-agent">
+      <legend><span class="num">1</span>What would you want an agent to take off your plate?</legend>
+      <p class="hint">An agent is a set of instructions, plus the context it needs, that does one recurring job the same way every time. Pick the job you'd hand off first. If more than one fits, pick the one that costs you the most time.</p>
+
+      <p class="wl-sub">Start with the area</p>
+      <div class="wl-options">
+        <label class="wl-opt"><input type="radio" name="agent_area" value="Content and PR"><span class="card"><b>Content and PR</b></span></label>
+        <label class="wl-opt"><input type="radio" name="agent_area" value="Sales and events"><span class="card"><b>Sales and events</b></span></label>
+        <label class="wl-opt"><input type="radio" name="agent_area" value="Customer and market insight"><span class="card"><b>Customer and market insight</b></span></label>
+        <label class="wl-opt"><input type="radio" name="agent_area" value="Something else"><span class="card"><b>Something else</b></span></label>
+        <label class="wl-opt"><input type="radio" name="agent_area" value="Not sure yet"><span class="card"><b>Not sure yet</b></span></label>
+      </div>
+
+      <div class="wl-step" id="step-agent" hidden>
+        <p class="wl-sub">Then the job</p>
+
+        <div class="wl-options wl-set" data-area="Content and PR" hidden>
+          <label class="wl-opt"><input type="radio" name="agent" value="PR and media pitches"><span class="card"><b>PR and media pitches</b><span>Drafts pitches, press releases and follow-ups to your target outlets, in your voice.</span></span></label>
+          <label class="wl-opt"><input type="radio" name="agent" value="LinkedIn and thought leadership"><span class="card"><b>LinkedIn and thought leadership</b><span>Turns rough notes and ideas into timely, relevant posts that sound like you wrote them.</span></span></label>
+          <label class="wl-opt"><input type="radio" name="agent" value="Content repurposing"><span class="card"><b>Content repurposing</b><span>Turns one piece of content into the formats you publish in.</span></span></label>
+        </div>
+
+        <div class="wl-options wl-set" data-area="Sales and events" hidden>
+          <label class="wl-opt"><input type="radio" name="agent" value="Weekly sales or pipeline updates"><span class="card"><b>Weekly sales or pipeline updates</b><span>Pulls the week's activity into a short update a leader can read in two minutes.</span></span></label>
+          <label class="wl-opt"><input type="radio" name="agent" value="Post-call follow-up"><span class="card"><b>Post-call follow-up</b><span>Reads a call transcript and picks the assets that answer what the prospect actually raised.</span></span></label>
+          <label class="wl-opt"><input type="radio" name="agent" value="Call recaps and CRM notes"><span class="card"><b>Call recaps and CRM notes</b><span>Turns a call into a clean recap and the notes your CRM needs.</span></span></label>
+          <label class="wl-opt"><input type="radio" name="agent" value="Account and prospect research"><span class="card"><b>Account and prospect research</b><span>Pulls together what you need to know before you reach out.</span></span></label>
+          <label class="wl-opt"><input type="radio" name="agent" value="Event follow-up"><span class="card"><b>Event follow-up</b><span>Drafts timely follow-up for the people you met or invited.</span></span></label>
+        </div>
+
+        <div class="wl-options wl-set" data-area="Customer and market insight" hidden>
+          <label class="wl-opt"><input type="radio" name="agent" value="Customer interview summaries"><span class="card"><b>Customer interview summaries</b><span>Turns a transcript into a one-page summary of themes, quotes and next steps.</span></span></label>
+          <label class="wl-opt"><input type="radio" name="agent" value="Win and loss interview analysis"><span class="card"><b>Win and loss interview analysis</b><span>Finds the patterns in why you win and lose deals.</span></span></label>
+          <label class="wl-opt"><input type="radio" name="agent" value="Competitor monitoring"><span class="card"><b>Competitor monitoring</b><span>Watches what competitors change and flags what matters to you.</span></span></label>
+        </div>
+      </div>
+
+      <div class="wl-other wl-field" id="other-wrap">
+        <label for="agent_other">What would it do?</label>
+        <input type="text" id="agent_other" name="agent_other" maxlength="200" placeholder="One or two sentences is plenty">
+      </div>
+    </fieldset>
+
+    <!-- Question 2 -->
+    <fieldset class="wl-q" id="q-path" hidden>
+      <legend><span class="num">2</span>How would you like to receive this?</legend>
+      <p class="hint">Pick the one that sounds most useful right now.</p>
+      <div class="wl-options">
+        <label class="wl-opt"><input type="radio" name="path" value="Agent to set up myself"><span class="card"><b>Give me the agent to set up myself</b><span>The prompt and a setup guide, and you take it from there.</span></span></label>
+        <label class="wl-opt"><input type="radio" name="path" value="Live group workshop"><span class="card"><b>Teach me in a live group workshop</b><span>90 minutes live on Zoom, up to 20 people. I walk through the exact build and the starter prompt, you build it as I go, and I answer questions live.</span></span></label>
+        <label class="wl-opt"><input type="radio" name="path" value="One-to-one"><span class="card"><b>Work through it with me one-to-one</b><span>A working session just for you, where we build your agent together.</span></span></label>
+        <label class="wl-opt"><input type="radio" name="path" value="Build it for me"><span class="card"><b>Build it for me</b><span>I set it up for you or your team.</span></span></label>
+        <label class="wl-opt"><input type="radio" name="path" value="Help me figure out where to start"><span class="card"><b>Help me figure out where to start</b><span>I'll point you to a good first step.</span></span></label>
+        <label class="wl-opt"><input type="radio" name="path" value="Keep me posted"><span class="card"><b>Just keep me posted</b><span>No agent right now. Send me updates.</span></span></label>
+      </div>
+    </fieldset>
+
+    <!-- Question 3 -->
+    <fieldset class="wl-q" id="q-role" hidden>
+      <legend><span class="num">3</span>What best describes you?</legend>
+      <div class="wl-options">
+        <label class="wl-opt"><input type="radio" name="role" value="Founder or business owner"><span class="card"><b>Founder or business owner</b></span></label>
+        <label class="wl-opt"><input type="radio" name="role" value="Marketing or sales at a company"><span class="card"><b>Marketing or sales at a company</b></span></label>
+        <label class="wl-opt"><input type="radio" name="role" value="Leading a marketing or sales team"><span class="card"><b>Leading a marketing or sales team</b></span></label>
+        <label class="wl-opt"><input type="radio" name="role" value="Fractional, freelance, or starting out"><span class="card"><b>Fractional, freelance, or starting out</b></span></label>
+        <label class="wl-opt"><input type="radio" name="role" value="Something else"><span class="card"><b>Something else</b></span></label>
+      </div>
+    </fieldset>
+
+    <!-- Question 4: only for people at a company -->
+    <fieldset class="wl-q" id="q-payer" hidden>
+      <legend><span class="num">4</span>If this is for work, who would pay for it?</legend>
+      <div class="wl-options">
+        <label class="wl-opt"><input type="radio" name="payer" value="Me"><span class="card"><b>Me</b></span></label>
+        <label class="wl-opt"><input type="radio" name="payer" value="My company"><span class="card"><b>My company</b></span></label>
+        <label class="wl-opt"><input type="radio" name="payer" value="Not sure"><span class="card"><b>Not sure</b></span></label>
+      </div>
+    </fieldset>
+
+    <div class="wl-contact" id="contact" hidden>
+      <div class="wl-field">
+        <label for="first_name">First name <span class="opt">(optional)</span></label>
+        <input type="text" id="first_name" name="first_name" autocomplete="given-name">
+      </div>
+      <div class="wl-field">
+        <label for="email_address">Email</label>
+        <input type="email" id="email_address" name="email_address" autocomplete="email" required>
+      </div>
+    </div>
+
+    <div class="wl-submit" id="submit-wrap" hidden>
+      <label class="wl-check"><input type="checkbox" id="updates" name="updates_optin"><span>Keep me updated on new offerings and the newsletter.</span></label>
+      <div class="wl-error" id="wl-error" role="alert"></div>
+      <button class="btn btn-primary" type="submit" id="wl-btn">Send it</button>
+      <p class="wl-privacy">I'll email you about what you picked here. Updates on new offerings and the newsletter only if you tick the box above. Unsubscribe any time. <a href="terms.html">Terms</a>.</p>
+    </div>
+  </form>
+
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">Proximity &middot; Kayla Fargo &middot; <a href="terms.html">Terms</a></div>
+</footer>
+
+<script>
+(function () {
+  // Kit form "Work with Kayla" (form ID 10019914). Fields below must exist on the form in Kit.
+  var KIT_URL = 'https://app.kit.com/forms/10019914/subscriptions';
+
+  var form = document.getElementById('wl-form');
+  var stepAgent = document.getElementById('step-agent');
+  var otherWrap = document.getElementById('other-wrap');
+  var qPath = document.getElementById('q-path');
+  var qRole = document.getElementById('q-role');
+  var qPayer = document.getElementById('q-payer');
+  var contact = document.getElementById('contact');
+  var submitWrap = document.getElementById('submit-wrap');
+  var errBox = document.getElementById('wl-error');
+  var btn = document.getElementById('wl-btn');
+
+  var COMPANY_ROLES = ['Marketing or sales at a company', 'Leading a marketing or sales team'];
+
+  function checked(name) { var el = form.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; }
+  function showError(msg) { errBox.textContent = msg; errBox.classList.add('show'); }
+  function clearError() { errBox.textContent = ''; errBox.classList.remove('show'); }
+
+  function agentValue() {
+    var area = checked('agent_area');
+    if (area === 'Something else') return 'Something else';
+    if (area === 'Not sure yet') return 'Not sure yet';
+    return checked('agent');
+  }
+
+  function refresh() {
+    var area = checked('agent_area');
+    var hasJobList = area === 'Content and PR' || area === 'Sales and events' || area === 'Customer and market insight';
+
+    stepAgent.hidden = !hasJobList;
+    document.querySelectorAll('.wl-set').forEach(function (s) {
+      var match = s.getAttribute('data-area') === area;
+      s.hidden = !match;
+      if (!match) s.querySelectorAll('input').forEach(function (i) { i.checked = false; });
+    });
+    otherWrap.classList.toggle('show', area === 'Something else');
+
+    var q1Done = !!agentValue();
+    qPath.hidden = !q1Done;
+
+    var q2Done = q1Done && !!checked('path');
+    qRole.hidden = !q2Done;
+
+    var role = checked('role');
+    var q3Done = q2Done && !!role;
+    var needsPayer = COMPANY_ROLES.indexOf(role) !== -1;
+    qPayer.hidden = !(q3Done && needsPayer);
+    if (!needsPayer) qPayer.querySelectorAll('input').forEach(function (i) { i.checked = false; });
+
+    var q4Done = !needsPayer || !!checked('payer');
+    var ready = q3Done && q4Done;
+    contact.hidden = !ready;
+    submitWrap.hidden = !ready;
+  }
+
+  form.addEventListener('change', function () { refresh(); clearError(); });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    clearError();
+    var area = checked('agent_area'), agent = agentValue(), path = checked('path'), role = checked('role');
+    var payer = COMPANY_ROLES.indexOf(role) !== -1 ? checked('payer') : '';
+    var other = form.agent_other.value.trim();
+    var email = form.email_address.value.trim();
+    if (!area || !agent) return showError('Pick an area and a job to continue.');
+    if (area === 'Something else' && !other) return showError('Tell me in a sentence what it would do.');
+    if (!path) return showError('Pick how you would like to receive this.');
+    if (!role) return showError('Pick what best describes you.');
+    if (COMPANY_ROLES.indexOf(role) !== -1 && !payer) return showError('Pick who would pay for this.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('Add a valid email so I can reach you.');
+
+    var data = new FormData();
+    data.append('email_address', email);
+    data.append('first_name', form.first_name.value.trim());
+    data.append('fields[agent_area]', area);
+    data.append('fields[agent]', agent);
+    data.append('fields[agent_other]', area === 'Something else' ? other : '');
+    data.append('fields[path]', path);
+    data.append('fields[role]', role);
+    data.append('fields[payer]', payer);
+    data.append('fields[updates_optin]', document.getElementById('updates').checked ? 'yes' : 'no');
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    fetch(KIT_URL, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, body: j }; }); })
+      .then(function (res) {
+        if (!res.ok || (res.body && res.body.status === 'error')) throw new Error('subscribe failed');
+        if (window.gtag) window.gtag('event', 'waitlist_signup', { agent_area: area, path: path, role: role });
+        window.location.href = 'waitlist-thanks.html';
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Send it';
+        showError('Something went wrong sending that. Try again, or email kayla@byproximity.com and I will add you by hand.');
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
