@@ -39,7 +39,7 @@
   var RULES = [
     { match: /reclaim\.ai/i, event: 'book_call' },
     { match: /buy\.stripe\.com\/9B6fZh8t5fDiddQ9JrfrW01/i, event: 'start_teardown' },
-    { match: /buy\.stripe\.com\/3cI14n5gTezec9M8FnfrW00/i, event: 'claim_roadmap' },
+    { match: /(book|buy)\.stripe\.com\/(bJedR9cJlcr6ddQ5tbfrW05|3cI14n5gTezec9M8FnfrW00)/i, event: 'claim_roadmap' },
     { match: /^mailto:/i, event: 'email_click' },
     { match: /linkedin\.com/i, event: 'social_click', extra: { network: 'linkedin' } },
     { match: /tiktok\.com/i, event: 'social_click', extra: { network: 'tiktok' } }
