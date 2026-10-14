@@ -53,9 +53,9 @@
 
   <div class="thanks-card">
     <p>I'm sorting through everyone's interest now and deciding what to offer next, so I can build the right things in the right order. You'll hear from me when there's something that fits what you told me.</p>
-    <p>If the PR agent is what you're after, you don't have to wait. I'm building it for a small number of people as a pilot: I set up the PR agent for you, in your own tools. I'm only opening this to a handful, and once those spots are gone, they're gone.</p>
-    <a class="btn btn-primary" href="https://book.stripe.com/bJe00jbFhdva5LoaNvfrW02" id="pilot-btn">Book a PR agent pilot</a>
-    <p class="small">Pilot terms are <a href="terms.html#pr-agent-pilot">here</a>.</p>
+    <p>If the PR agent is what you're after, you don't have to wait. I'll build it for you: I set up a custom PR agent around your business, and you load it into your own Claude or ChatGPT to run yourself.</p>
+    <a class="btn btn-primary" href="pr-agent.html" id="pr-agent-btn">See the PR agent install</a>
+    <p class="small">Terms are <a href="terms.html#pr-agent">here</a>.</p>
   </div>
 </section>
 
@@ -64,8 +64,8 @@
 </footer>
 
 <script>
-  var pilot = document.getElementById('pilot-btn');
-  if (pilot) pilot.addEventListener('click', function () { if (window.gtag) window.gtag('event', 'pilot_click'); });
+  var pilot = document.getElementById('pr-agent-btn');
+  if (pilot) pilot.addEventListener('click', function () { if (window.gtag) window.gtag('event', 'pr_agent_page_click'); });
 </script>
 
 </body>
