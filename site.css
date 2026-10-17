@@ -552,3 +552,14 @@ header.masthead .wordmark .logo-mark{width:30px;height:30px}
 }
 /* stacked calendar: say which days the long bar covers */
 @media (max-width:860px){.wk-span::before{content:"Tue to Thu · ";font-weight:600;opacity:.7}}
+
+.news-band{background:var(--g-800);border-top:3px solid var(--lime);padding:44px 0}
+.news-band .news-inner{max-width:var(--maxw,1100px);margin:0 auto;padding-inline:24px;display:grid;gap:18px}
+.news-band h2{font-family:var(--display);font-size:1.5rem;line-height:1.2;margin:0;color:var(--text);text-wrap:balance}
+.news-band p{margin:0;color:var(--muted);max-width:60ch}
+.news-form{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start}
+.news-form input[type="email"]{flex:1 1 260px;min-width:0;font:inherit;font-size:1rem;color:var(--dark-ink);background:var(--paper);border:3px solid var(--g-950);border-radius:12px;padding:12px 16px;box-shadow:4px 4px 0 var(--lime)}
+.news-form input:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.news-form .btn[disabled]{opacity:.6;cursor:wait}
+.news-msg{display:none;width:100%;margin:0;color:var(--text);font-size:.96rem}
+.news-msg.show{display:block}
