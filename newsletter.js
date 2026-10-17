@@ -1,6 +1,6 @@
-/* Footer newsletter signup. Posts to the Kit form "Newsletter site" (id 9743128). */
+/* Footer newsletter signup. Posts to the Kit form "Newsletter" (id 10058783). */
 (function () {
-  var KIT_URL = 'https://app.kit.com/forms/9743128/subscriptions';
+  var KIT_URL = 'https://app.kit.com/forms/10058783/subscriptions';
   var form = document.getElementById('news-form');
   if (!form) return;
   var email = document.getElementById('news-email');
