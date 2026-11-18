@@ -70,7 +70,7 @@
 
 <header class="masthead">
   <div class="wrap">
-    <a class="wordmark" href="index.html"><svg class="logo-mark" width="34" height="34" viewBox="-70 -70 140 140" aria-hidden="true"><path d="M0 -62 A62 62 0 0 0 0 62 Z" transform="translate(-8 0)" fill="#D6F24B" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -62 A62 62 0 0 1 0 62 Z" transform="translate(8 0)" fill="#CFE9D6" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#D6F24B" stroke="#061F16" stroke-width="6" stroke-linejoin="round"/></svg><span>Proximity</span></a>
+    <a class="wordmark" href="/"><svg class="logo-mark" width="34" height="34" viewBox="-70 -70 140 140" aria-hidden="true"><path d="M0 -62 A62 62 0 0 0 0 62 Z" transform="translate(-8 0)" fill="#D6F24B" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -62 A62 62 0 0 1 0 62 Z" transform="translate(8 0)" fill="#CFE9D6" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#D6F24B" stroke="#061F16" stroke-width="6" stroke-linejoin="round"/></svg><span>Proximity</span></a>
   </div>
 </header>
 
@@ -179,14 +179,14 @@
     <div class="wl-submit" id="submit-wrap" hidden>
       <div class="wl-error" id="wl-error" role="alert"></div>
       <button class="btn btn-primary" type="submit" id="wl-btn">Send it</button>
-      <p class="wl-privacy">When you send this, I'll email you about what you picked, then a few short notes over the next two weeks, then my newsletter. Unsubscribe any time. <a href="terms.html">Terms</a>.</p>
+      <p class="wl-privacy">When you send this, I'll email you about what you picked, then a few short notes over the next two weeks, then my newsletter. Unsubscribe any time. <a href="terms">Terms</a>.</p>
     </div>
   </form>
 
 </section>
 
 <footer class="site-footer">
-  <div class="wrap">Proximity &middot; Kayla Fargo &middot; <a href="terms.html">Terms</a></div>
+  <div class="wrap">Proximity &middot; Kayla Fargo &middot; <a href="terms">Terms</a></div>
 </footer>
 
 <script>
@@ -312,7 +312,7 @@
       .then(function (res) {
         if (!res.ok || (res.body && res.body.status === 'error')) throw new Error('subscribe failed');
         if (window.gtag) window.gtag('event', 'intake_signup', { agent_area: summary.areas.join('; '), path: paths.join('; '), role: role });
-        window.location.href = 'start-thanks.html';
+        window.location.href = 'start-thanks';
       })
       .catch(function () {
         btn.disabled = false;
