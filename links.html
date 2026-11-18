@@ -47,10 +47,16 @@
   .lk-card .btn-primary{background:var(--g-950);color:var(--lime)}
   .lk-card .btn-ghost{color:var(--dark-ink);border-color:var(--g-950);background:transparent}
 
+  .lk-card .news-form{margin-top:6px;box-shadow:none}
+  .lk-card .news-form input[type="email"]{flex:1 1 100%;box-shadow:4px 4px 0 var(--g-950)}
+  .lk-card .news-form .btn{flex:1 1 100%}
+  .lk-card .news-msg{color:var(--dark-ink);font-weight:600}
+
   .lk-foot{margin-top:40px;text-align:center;font-size:.86rem;color:var(--muted)}
   .lk-foot a{color:var(--mint);text-underline-offset:3px}
 </style>
 <script src="analytics.js" defer></script>
+<script src="newsletter.js" defer></script>
 </head>
 <body>
 
@@ -91,6 +97,18 @@
       <h2>Book a call</h2>
       <p>For fractional CMO work or bigger AI builds across your go-to-market team. If you just want a PR agent or a roadmap, the options above are faster.</p>
       <a class="btn btn-ghost" href="https://app.reclaim.ai/m/kayla-fargo/high-priority-meeting" target="_blank" rel="noopener" data-lk="book_call">Grab a time<span class="sr-only" style="position:absolute;left:-9999px"> (opens in a new tab)</span></a>
+    </li>
+
+    <li class="lk-card">
+      <span class="lk-tag">Free</span>
+      <h2>Get the newsletter</h2>
+      <p>Plain-spoken notes on building AI agents for marketing and sales, from someone who builds and uses them every week.</p>
+      <form class="news-form" id="news-form" novalidate>
+        <label for="news-email" class="sr-only" style="position:absolute;left:-9999px">Email</label>
+        <input type="email" id="news-email" name="email_address" placeholder="you@company.com" autocomplete="email" required>
+        <button class="btn btn-primary" type="submit" id="news-btn">Subscribe</button>
+        <p class="news-msg" id="news-msg" role="status"></p>
+      </form>
     </li>
   </ul>
 
