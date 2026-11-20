@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Your PR Agent Kit | Proximity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+<style>
+  .in-art{max-width:380px;margin:0 auto;width:100%}
+  .in-art .frame{background:var(--g-800);border:3px solid var(--g-950);border-radius:14px;box-shadow:9px 9px 0 var(--lime);transform:rotate(1.6deg);overflow:hidden;aspect-ratio:1/1}
+  .in-art img{width:100%;height:100%;object-fit:cover;display:block}
+  .in-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+  @media (max-width:900px){.in-steps{grid-template-columns:1fr}}
+  .in-steps[hidden]{display:none}
+  .in-steps .step-card{display:flex;flex-direction:column;align-items:flex-start;padding:26px}
+  .in-steps .n{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--lime);border:3px solid var(--g-950);font-family:var(--display);font-size:1.25rem;color:var(--dark-ink);margin-bottom:16px}
+  .in-steps h2{font-family:var(--display);font-weight:400;font-size:clamp(1.4rem,2.4vw,1.75rem);line-height:1.1;color:var(--g-800);margin-bottom:10px}
+  .in-steps p{color:var(--dark-muted);font-size:1.02rem;margin-bottom:22px}
+  .in-steps .btn{margin-top:auto}
+  .in-steps .btn + .btn{margin-top:10px}
+  .in-steps .btn-ghost{color:var(--dark-ink);background:transparent;border-color:var(--g-950)}
+  .in-steps .btn-ghost:hover{background:var(--lime)}
+  .kit-soon{max-width:62ch;margin:0 0 8px;padding:22px 26px;border:3px solid var(--g-950);border-radius:14px;background:var(--paper);box-shadow:6px 6px 0 var(--lime);color:var(--dark-ink)}
+  .kit-soon h2{font-family:var(--display);font-weight:400;font-size:clamp(1.4rem,2.4vw,1.75rem);line-height:1.1;color:var(--g-800);margin-bottom:8px}
+  .kit-soon p{color:var(--dark-muted);font-size:1.04rem;margin:0}
+  .kit-note{margin-top:34px;max-width:62ch;color:var(--muted);font-size:1.06rem}
+  .kit-note h2{font-family:var(--display);font-weight:400;font-size:clamp(1.4rem,2.4vw,1.75rem);line-height:1.1;color:var(--text);margin-bottom:10px}
+  .kit-note ul{margin:0 0 0 1.1rem;padding:0}
+  .kit-note li{margin-bottom:6px}
+  .kit-note strong{color:var(--text)}
+  .in-help{margin-top:26px;font-size:.98rem;color:var(--muted)}
+  .in-help a,.kit-note a{color:var(--lime);font-weight:700;text-underline-offset:3px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+<script src="analytics.js" defer></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/"><svg class="logo-mark" width="34" height="34" viewBox="-70 -70 140 140" aria-hidden="true"><path d="M0 -62 A62 62 0 0 0 0 62 Z" transform="translate(-8 0)" fill="#D6F24B" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -62 A62 62 0 0 1 0 62 Z" transform="translate(8 0)" fill="#CFE9D6" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#D6F24B" stroke="#061F16" stroke-width="6" stroke-linejoin="round"/></svg><span>Proximity</span></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="fractional">Fractional Marketing</a>
+      <a href="teardown">The Teardown</a>
+      <a href="about">About</a>
+      <a href="contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <div class="hero-split">
+    <div>
+      <h1 style="max-width:14ch;font-size:clamp(2.4rem,5.2vw,4rem)">Your PR Agent <span class="mark">Kit</span>.</h1>
+      <p class="lede">Everything you need to get the agent running in your own Claude or ChatGPT account.</p>
+    </div>
+    <div class="in-art">
+      <div class="frame">
+        <img src="art/agent.svg" width="380" height="380" alt="Illustration of a friendly robot holding up a ranked list.">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="container" style="padding-top:clamp(8px,2vw,24px)">
+
+  <!-- Coming-soon state. When the kit files are final: delete this block, remove the
+       hidden attribute from #kit-files, and fill in the three hrefs marked TODO. -->
+  <div class="kit-soon" id="kit-soon">
+    <h2>Your files are being finalized.</h2>
+    <p>I&rsquo;ll email you from kayla@byproximity.com the day they&rsquo;re ready, with these same links. Nothing else for you to do until then.</p>
+  </div>
+
+  <div class="in-steps" id="kit-files" hidden>
+    <div class="step-card">
+      <span class="n">1</span>
+      <h2>Download the kit</h2>
+      <p>The agent files, ready to load into your own Claude or ChatGPT.</p>
+      <a class="btn btn-primary" href="#" data-kit-link="download"><!-- TODO: kit zip link -->Download the kit</a>
+    </div>
+    <div class="step-card">
+      <span class="n">2</span>
+      <h2>Fill out the intake worksheet</h2>
+      <p>This is where your company context goes: who you are, what&rsquo;s off limits, and who you want to reach.</p>
+      <a class="btn btn-ghost" href="#" data-kit-link="intake"><!-- TODO: intake worksheet link -->Open the worksheet</a>
+    </div>
+    <div class="step-card">
+      <span class="n">3</span>
+      <h2>Follow the setup guide</h2>
+      <p>Pick the guide for the tool you use. Each one covers Gmail, Outlook and copy-paste setups.</p>
+      <a class="btn btn-primary" href="#" data-kit-link="guide-claude"><!-- TODO: Claude guide link -->Claude guide</a>
+      <a class="btn btn-ghost" href="#" data-kit-link="guide-chatgpt"><!-- TODO: ChatGPT guide link -->ChatGPT guide</a>
+    </div>
+  </div>
+
+  <div class="kit-note">
+    <h2>Before you start.</h2>
+    <ul>
+      <li><strong>You need a paid Claude or ChatGPT plan.</strong> Scheduled weekly scans and local-folder access aren&rsquo;t available on free plans.</li>
+      <li><strong>Stuck?</strong> The kit includes a troubleshooting page. Check it first, then email me.</li>
+      <li><strong>Which version you have:</strong> the kit carries a version stamp, so tell me the version if you write in.</li>
+    </ul>
+  </div>
+
+  <div class="kit-note">
+    <h2>Your license.</h2>
+    <p>The kit is licensed for one company or brand. Using it for another brand, including another client of your agency, needs its own license. The kit doesn&rsquo;t include support or a build from me. If you&rsquo;d rather I set it up for you, that&rsquo;s the <a href="pr-agent">done-for-you install</a>. <a href="terms#pr-agent">Full terms.</a></p>
+  </div>
+
+  <p class="in-help">Questions? Email <a href="mailto:kayla@byproximity.com">kayla@byproximity.com</a>.</p>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span class="foot-brand"><svg class="foot-seal" width="92" height="92" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="seal-ring" d="M120,120 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs><circle cx="120" cy="120" r="112" fill="none" stroke="#D6F24B" stroke-width="6"/><circle cx="120" cy="120" r="66" fill="none" stroke="#D6F24B" stroke-width="4"/><text font-family="Hanken Grotesk,sans-serif" font-weight="800" font-size="15" letter-spacing="2.6" fill="#D6F24B"><textPath href="#seal-ring">PROXIMITY · FRACTIONAL B2B MARKETING &amp; GTM ·</textPath></text><text x="120" y="146" text-anchor="middle" font-family="Caprasimo,serif" font-size="92" fill="#D6F24B">P</text></svg><span>© 2026 Proximity - Kayla Fargo</span></span>
+    <div class="foot-links">
+      <a href="roadmap">AI Agent Roadmap</a>
+      <a href="pr-agent">PR Agent Install</a>
+      <a href="about">About</a>
+      <a href="teardown">The Teardown</a>
+      <a href="fractional">Fractional Marketing</a>
+      <a href="contact">Contact</a>
+      <a href="terms">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
