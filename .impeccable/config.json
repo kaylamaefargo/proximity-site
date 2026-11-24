@@ -1,0 +1,62 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "pr-agent.html"
+        ],
+        "createdAt": "2026-11-24T15:23:23.159Z",
+        "reason": "Agent: .marquee-track is shared site.css; neither page contains a marquee element, so the rule fires on unused CSS"
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          "pr-agent.html"
+        ],
+        "createdAt": "2026-11-24T15:23:23.178Z",
+        "reason": "Agent: measured --muted #A3C1AE on --g-800 #0F3D2C = 6.26:1, passes WCAG AA; intentional dark-green brand palette"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pr-agent.html"
+        ],
+        "createdAt": "2026-11-24T15:23:23.192Z",
+        "reason": "Agent: verified in rendered screenshots; flagged wrappers (.verbs, .cta-band, .news-band) inset text via child padding or .container, so text is not flush"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "pr-agent-kit.html"
+        ],
+        "createdAt": "2026-11-24T15:23:23.204Z",
+        "reason": "Agent: .marquee-track is shared site.css; neither page contains a marquee element, so the rule fires on unused CSS"
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          "pr-agent-kit.html"
+        ],
+        "createdAt": "2026-11-24T15:23:23.216Z",
+        "reason": "Agent: measured --muted #A3C1AE on --g-800 #0F3D2C = 6.26:1, passes WCAG AA; intentional dark-green brand palette"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pr-agent-kit.html"
+        ],
+        "createdAt": "2026-11-24T15:23:23.228Z",
+        "reason": "Agent: verified in rendered screenshots; flagged wrappers (.verbs, .cta-band, .news-band) inset text via child padding or .container, so text is not flush"
+      }
+    ]
+  }
+}
