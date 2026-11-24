@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The PR Agent Kit | Proximity</title>
+<meta name="description" content="The weekly PR agent I run, packaged so you can set it up yourself in Claude or ChatGPT. It finds the opportunities, scores them and drafts the pitches. You review and send. $297.">
+<link rel="canonical" href="https://byproximity.com/pr-agent-kit">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "The PR Agent Kit", "brand": {"@id": "https://byproximity.com/#proximity"}, "description": "A weekly AI PR agent you set up yourself in Claude or ChatGPT: agent files, intake worksheet, install guides, tracker, and a sample first scan. It finds press opportunities, scores them and drafts pitches for your review.", "image": "https://byproximity.com/art/pr-agent-kit-product-square.png", "url": "https://byproximity.com/pr-agent-kit", "offers": {"@type": "Offer", "price": "297", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://byproximity.com/pr-agent-kit"}}</script>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://byproximity.com/pr-agent-kit">
+<meta property="og:title" content="The PR Agent Kit | Proximity">
+<meta property="og:description" content="The weekly PR agent I run, packaged so you can set it up yourself. $297.">
+<meta property="og:image" content="https://byproximity.com/og-image-pr-agent.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The PR Agent Kit | Proximity">
+<meta name="twitter:description" content="The weekly PR agent I run, packaged so you can set it up yourself. $297.">
+<meta name="twitter:image" content="https://byproximity.com/og-image-pr-agent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Page-specific pieces, built from the site's own tokens */
+  .pr-hero-art{position:relative;max-width:420px;margin:0 auto;width:100%}
+  .pr-hero-art .frame{background:var(--g-800);border:3px solid var(--g-950);border-radius:14px;box-shadow:9px 9px 0 var(--lime);transform:rotate(1.6deg);overflow:hidden;aspect-ratio:1/1}
+  .pr-hero-art img{width:100%;height:100%;object-fit:cover;display:block}
+  .pr-hero-note{margin-top:14px;font-size:.95rem;color:var(--muted);font-weight:500}
+
+  .pr-proof{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:start}
+  @media (max-width:900px){.pr-proof{grid-template-columns:1fr}}
+
+  .funnel{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .funnel li{display:grid;grid-template-columns:minmax(180px,48%) 1fr;gap:18px;align-items:center}
+  .funnel .track{min-width:0}
+  .funnel .bar{display:flex;align-items:center;height:56px;min-width:76px;width:var(--w);background:var(--mint);border:3px solid var(--g-950);border-radius:10px;padding-inline:16px;color:var(--dark-ink)}
+  .funnel .bar b{font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1}
+  .funnel .lbl{font-size:1rem;line-height:1.3;color:var(--text);font-weight:600}
+  @media (max-width:560px){.funnel li{grid-template-columns:1fr;gap:6px}}
+  .funnel li.win .bar{background:var(--lime);box-shadow:5px 5px 0 var(--g-700)}
+  .funnel li.win .lbl{color:var(--lime);font-weight:800}
+  .pr-proof-note{margin-top:22px;font-size:.95rem;color:var(--muted);max-width:56ch}
+
+  .embed-frame{background:var(--paper);border:3px solid var(--g-950);border-radius:14px;box-shadow:9px 9px 0 var(--lime);padding:14px;transform:rotate(-1deg);max-width:380px;margin-inline:auto;overflow:hidden}
+  .embed-frame blockquote.tiktok-embed{margin:0 !important;min-width:0 !important;max-width:100% !important}
+  .embed-frame blockquote.tiktok-embed a{color:var(--g-800);font-weight:700}
+  .embed-frame .embed-still{display:block;width:100%;height:auto;border-radius:8px;margin-bottom:10px}
+  .embed-cap{margin-top:18px;text-align:center;font-size:.92rem;color:var(--muted)}
+
+  .verbs{list-style:none;margin:0;padding:0;border:3px solid var(--g-950);border-radius:14px;overflow:hidden;box-shadow:7px 7px 0 var(--lime);background:var(--paper)}
+  .verbs li{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:6px 28px;align-items:baseline;padding:22px clamp(18px,3vw,32px);color:var(--dark-ink)}
+  .verbs li + li{border-top:3px dashed var(--g-700)}
+  .verbs h3{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1;color:var(--g-800)}
+  .verbs p{color:var(--dark-muted);font-size:1.04rem;max-width:56ch}
+  .verbs li.you{background:var(--lime)}
+  .verbs li.you h3{color:var(--dark-ink)}
+  .verbs li.you p{color:var(--g-800);font-weight:600}
+  @media (max-width:620px){.verbs li{grid-template-columns:1fr}}
+
+  .how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  @media (max-width:900px){.how{grid-template-columns:1fr}}
+  .how .step-card h3{font-family:var(--display);font-weight:400;font-size:1.35rem;line-height:1.15;margin-bottom:10px}
+  .how .step-card p{font-size:1rem}
+  .how .n{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--lime);border:3px solid var(--g-950);font-family:var(--display);font-size:1.15rem;color:var(--dark-ink);margin-bottom:14px}
+
+  .scope-col .icon{display:none}
+  .pr-lead{font-size:1.1rem;color:var(--muted);max-width:62ch;margin-top:12px}
+  .pr-lead strong{color:var(--text)}
+
+  .kit-shot{max-width:760px;margin:0 auto}
+  .kit-shot .win{background:var(--paper);border:3px solid var(--g-950);border-radius:14px;box-shadow:9px 9px 0 var(--lime);overflow:hidden}
+  .kit-shot .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:3px solid var(--g-950);background:var(--mint);color:var(--dark-ink);font-size:.85rem;font-weight:700}
+  .kit-shot .bar i{width:11px;height:11px;border-radius:50%;background:var(--g-950);display:inline-block}
+  .kit-shot .scroll{height:min(560px,70vh);overflow-y:auto;background:#fff;-webkit-overflow-scrolling:touch}
+  .kit-shot .scroll:focus-visible{outline:3px solid var(--lime);outline-offset:-3px}
+  .kit-shot img{display:block;width:100%;height:auto}
+  .kit-cap{margin-top:18px;text-align:center;font-size:.92rem;color:var(--muted)}
+  .kit-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  @media (max-width:900px){.kit-facts{grid-template-columns:1fr}}
+  .kit-facts .step-card h3{font-family:var(--display);font-weight:400;font-size:1.35rem;line-height:1.15;margin-bottom:10px}
+  .kit-facts .step-card p{font-size:1rem}
+</style>
+<script src="analytics.js" defer></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/"><svg class="logo-mark" width="34" height="34" viewBox="-70 -70 140 140" aria-hidden="true"><path d="M0 -62 A62 62 0 0 0 0 62 Z" transform="translate(-8 0)" fill="#D6F24B" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -62 A62 62 0 0 1 0 62 Z" transform="translate(8 0)" fill="#CFE9D6" stroke="#061F16" stroke-width="7" stroke-linejoin="round"/><path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#D6F24B" stroke="#061F16" stroke-width="6" stroke-linejoin="round"/></svg><span>Proximity</span></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="fractional">Fractional Marketing</a>
+      <a href="teardown">The Teardown</a>
+      <a href="about">About</a>
+      <a href="contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <div class="hero-split">
+    <div>
+      <h1 style="max-width:20ch;font-size:clamp(2.1rem,4.4vw,3.5rem)">The PR agent I run every week, <span class="mark">packaged so you can run it too.</span></h1>
+      <p class="lede">I built an agent that finds trade-press opportunities, scores them and drafts the pitches I send. In its first two weeks, four editors said yes. The Kit is that same system, ready for you to set up in your own Claude or ChatGPT.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm00jdNp8aQgq2g7PfrW06" data-pr-buy="hero">Get the Kit, $297</a>
+        <a class="btn btn-ghost" href="#inside">See what's inside</a>
+      </div>
+      <p class="pr-hero-note">One company or brand. About 45 minutes to set up. 14 days of email support.</p>
+    </div>
+    <div class="pr-hero-art">
+      <div class="frame">
+        <img src="art/pr-agent-kit-product-square.png" width="420" height="420" alt="The PR Agent Kit product image.">
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="zine-rule"><span class="glyph"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg></span></div>
+
+<section class="container" id="proof">
+  <div class="section-head">
+    <h2>Two weeks in, <span class="mark">four editors said yes</span>.</h2>
+    <p class="pr-lead">This is the agent running for a B2B SaaS company I work with. It started with no PR strategy at all. The Kit is the same system without the custom build.</p>
+  </div>
+  <div class="pr-proof">
+    <div>
+      <ol class="funnel" aria-label="Results from the agent's first two weeks">
+        <li style="--w:100%"><div class="track"><div class="bar"><b>22</b></div></div><span class="lbl">qualified opportunities found</span></li>
+        <li style="--w:64%"><div class="track"><div class="bar"><b>14</b></div></div><span class="lbl">pitches written, each one reviewed by me</span></li>
+        <li style="--w:55%"><div class="track"><div class="bar"><b>12</b></div></div><span class="lbl">pitches sent</span></li>
+        <li style="--w:28%"><div class="track"><div class="bar"><b>6</b></div></div><span class="lbl">human replies from editors</span></li>
+        <li class="win" style="--w:19%"><div class="track"><div class="bar"><b>4</b></div></div><span class="lbl">editors said yes, and two of those pieces are already submitted or scheduled</span></li>
+      </ol>
+    </div>
+    <div>
+      <div class="embed-frame">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@kaylamaefargo/video/7693630432973229325" data-video-id="7693630432973229325">
+          <section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@kaylamaefargo/video/7693630432973229325"><img class="embed-still" src="art/pr-agent-spoiler-alert.webp" width="844" height="1442" alt="Kayla talking to the camera in a still from her TikTok, Spoiler alert: it's working!" loading="lazy">Watch "Spoiler alert: it's working!" on TikTok</a></section>
+        </blockquote>
+      </div>
+      <p class="embed-cap">My day-11 update, live from TikTok.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-head">
+    <h2>The agent does the finding, scoring and pitching. <span class="mark">You stay in charge.</span></h2>
+  </div>
+  <ul class="verbs">
+    <li><h3>Finds</h3><p>Scans every week for the trade publications, podcasts, roundups and awards that fit your business.</p></li>
+    <li><h3>Scores</h3><p>Rates each opportunity against a rubric built around your goals, so you only see the ones worth a pitch.</p></li>
+    <li><h3>Pitches</h3><p>Writes the pitch in your voice and queues it up for review.</p></li>
+    <li class="you"><h3>You send</h3><p>You review, edit and send every pitch. You keep the judgment and the relationships.</p></li>
+  </ul>
+</section>
+
+<section class="container" id="inside">
+  <div class="section-head">
+    <h2>What's inside the Kit.</h2>
+    <p class="pr-lead">Everything you need to go from a blank Claude or ChatGPT account to a PR scan that lands in your inbox every Monday. You don't write a prompt from scratch.</p>
+  </div>
+  <div class="scope">
+    <div class="scope-col yes">
+      <h3>You get</h3>
+      <ul>
+        <li><strong>The agent</strong>, in two versions: one for Claude and one for ChatGPT. Use the one for the tool you pay for.</li>
+        <li><strong>An intake worksheet</strong> where your company, buyers and goals go. This is what makes the pitches yours and not generic.</li>
+        <li><strong>A filled-in sample worksheet</strong> for a made-up B2B company, so you can see what good answers look like.</li>
+        <li><strong>Step-by-step install guides</strong> for Claude and for ChatGPT, and a troubleshooting page.</li>
+        <li><strong>A tracker</strong> for your opportunities and pitches, built to live inside Claude or ChatGPT.</li>
+        <li><strong>A sample first scan</strong>: the first weekly report for a made-up company, with real outlets, dated route checks and four ready-to-review pitches.</li>
+        <li><strong>12 months of updates</strong> and <strong>14 days of email support</strong>, up to three replies.</li>
+      </ul>
+    </div>
+    <div class="scope-col no">
+      <h3>It doesn't</h3>
+      <ul>
+        <li>Include a custom build, an interview or a live setup call (that's the $997 Install)</li>
+        <li>Send pitches for you</li>
+        <li>Write contributed articles or other content</li>
+        <li>Introduce you to journalists or land placements</li>
+        <li>Guarantee coverage, replies or results</li>
+        <li>Give legal or compliance advice. You check every claim before it goes out.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="delivery">
+  <div class="section-head">
+    <h2>Here's exactly what you get after you buy.</h2>
+    <p class="pr-lead">Right after checkout you land on this page. The files, the guides and the samples are all in one place, and you can come back to it for updates.</p>
+  </div>
+  <div class="kit-shot">
+    <div class="win">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Your Kit delivery page</span></div>
+      <div class="scroll" tabindex="0" role="region" aria-label="Scrollable preview of the Kit delivery page">
+        <img src="art/pr-agent-kit-delivery.webp" width="1000" height="2740" alt="The Kit delivery page: download links for the Claude and ChatGPT agents and trackers, what is in the Kit, how to get going, support and updates, and links to the install guides, worksheets and sample first scan.">
+      </div>
+    </div>
+    <p class="kit-cap">Scroll the preview. It's the real page.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-head">
+    <h2>Who it's for. <span class="mark">And who it isn't.</span></h2>
+    <p class="pr-lead">The Kit is for <strong>AI-native go-to-market operators</strong>: marketers, founders and fractional leads who are comfortable in Claude or ChatGPT and want to own a repeatable PR system without hiring it out. If you like understanding how the thing works, this is for you.</p>
+    <p class="pr-lead">If you'd rather hand over a short intake and get a finished agent back, buy the <a href="pr-agent">PR Agent Install, $997</a>. I build it for you and set it up with you on a call.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-head">
+    <h2>What setup takes.</h2>
+  </div>
+  <div class="kit-facts">
+    <div class="step-card">
+      <h3>About 45 minutes in Claude</h3>
+      <p>About an hour in ChatGPT. Most of that is filling in your worksheet, which is the step that matters most. The guides walk you through each part, with a time on every step.</p>
+    </div>
+    <div class="step-card">
+      <h3>What you need</h3>
+      <p>A paid Claude or ChatGPT plan with web search turned on. Gmail or Outlook if you want pitch drafts created in your inbox. No coding.</p>
+    </div>
+    <div class="step-card">
+      <h3>About 20 minutes a week</h3>
+      <p>Once it's running, the scan arrives on your schedule. You spend about 20 minutes reviewing, editing and sending. The ChatGPT setup is tested less than the Claude one, and the guide marks the steps most likely to differ.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-head">
+    <h2>How it works.</h2>
+  </div>
+  <div class="how">
+    <div class="step-card">
+      <span class="n">1</span>
+      <h3>You buy the Kit</h3>
+      <p>Checkout is through Stripe. You land on your delivery page right away, and the files and guides are there.</p>
+    </div>
+    <div class="step-card">
+      <span class="n">2</span>
+      <h3>You fill in the worksheet and install the agent</h3>
+      <p>Follow the guide for Claude or ChatGPT. It takes you from worksheet to installed agent to a tested first run.</p>
+    </div>
+    <div class="step-card">
+      <span class="n">3</span>
+      <h3>You turn on your weekly scan</h3>
+      <p>Pick a day and time. Each scan finds and scores opportunities and drafts the pitches. You review and send. If you get stuck, email me with a screenshot.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="callout">
+    <p><strong>Why me.</strong> I've spent more than a decade in B2B marketing and go to market. I run this agent every week for a company I work with, so I know which inputs make the pitches good and which make them generic. The worksheet is built around that.</p>
+  </div>
+</section>
+
+<section class="container" id="terms-short">
+  <div class="section-head">
+    <h2>The fine print, in plain words.</h2>
+    <p class="pr-lead">One license covers one company or brand, so it isn't for resale or for running for multiple clients. Support is 14 days of email, up to three replies, each within five business days, and it covers getting the Kit running, not your pitch strategy. You get updates for 12 months. If the Kit still doesn't run after you've followed the guides and used your support, you can ask for a refund within 14 days of purchase. <a href="terms#pr-agent-kit">Full terms.</a></p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>The PR Agent Kit. <span class="mark">$297.</span></h2>
+    <p class="lede">The same weekly PR system I run, ready to set up in your own Claude or ChatGPT. You'll need your own paid plan.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="https://buy.stripe.com/dRm00jdNp8aQgq2g7PfrW06" data-pr-buy="cta-band">Get the Kit</a>
+    </div>
+    <p class="cta-fine">The agent writes pitch drafts and suggestions, and you review and send everything. No guaranteed coverage, replies or placements. Want me to build it for you instead? <a href="pr-agent">See the $997 Install.</a></p>
+  </div>
+</section>
+
+<section class="news-band" aria-labelledby="news-h">
+  <div class="news-inner">
+    <h2 id="news-h">Notes on building AI agents for marketing and sales.</h2>
+    <p>Plain-spoken notes on building AI agents for marketing and sales work, from someone who builds and uses them every week.</p>
+    <div class="news-form"><a class="btn btn-primary" href="https://closequartersgtm.substack.com/" target="_blank" rel="noopener" data-lk="substack">Subscribe on Substack<span class="sr-only" style="position:absolute;left:-9999px"> (opens in a new tab)</span></a></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span class="foot-brand"><svg class="foot-seal" width="92" height="92" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="seal-ring" d="M120,120 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs><circle cx="120" cy="120" r="112" fill="none" stroke="#D6F24B" stroke-width="6"/><circle cx="120" cy="120" r="66" fill="none" stroke="#D6F24B" stroke-width="4"/><text font-family="Hanken Grotesk,sans-serif" font-weight="800" font-size="15" letter-spacing="2.6" fill="#D6F24B"><textPath href="#seal-ring">PROXIMITY · FRACTIONAL B2B MARKETING &amp; GTM ·</textPath></text><text x="120" y="146" text-anchor="middle" font-family="Caprasimo,serif" font-size="92" fill="#D6F24B">P</text></svg><span>© 2026 Proximity - Kayla Fargo</span></span>
+    <div class="foot-links">
+      <a href="roadmap">AI Agent Roadmap</a>
+      <a href="pr-agent">PR Agent Install</a>
+      <a href="pr-agent-kit" aria-current="page">PR Agent Kit</a>
+      <a href="about">About</a>
+      <a href="teardown">The Teardown</a>
+      <a href="fractional">Fractional Marketing</a>
+      <a href="contact">Contact</a>
+      <a href="terms">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+<script>
+  document.querySelectorAll('[data-pr-buy]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.gtag) window.gtag('event', 'pr_agent_kit_click', { location: a.getAttribute('data-pr-buy') });
+    });
+  });
+</script>
+
+</body>
+</html>
